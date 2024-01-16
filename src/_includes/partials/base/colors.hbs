@@ -1,0 +1,72 @@
+<div class="w-8/12">
+    <p>
+        Our palette is where classic meets contemporary. Our colors are an
+        ode to CMYK which we treat as a group and not as individuals. This
+        reference goes back to it's origins in printing; nothing can be made if
+        one is absent.</p>
+</div>
+{{#each @root.colors as |palettes|}}
+<div class="my-10 {{#if @first}}mt-5{{/if}}">
+    <h3 class="h5 font-extrabold uppercase tracking-wide text-medium-gray">{{palettes.group}}</h3>
+    <div class="flex flex-wrap -mx-4">
+        {{#each palettes.colors as | color |}}
+        <div class="w-4/12 px-4 py-3">
+            <div
+                class="rounded-md bg-{{@key}}  mb-1 {{#if (isLightColor @key)}}border{{/if}} {{#unless (contrastCheck color.rgb '80, 84, 100' 17)}}text-white{{/unless}} flex justify-between p-4 pb-5">
+                <div class="text-left">
+                    <span
+                        class="font-extrabold leading-none uppercase text-xs py-[4px] my-[4px] inline-block border-b {{#if (contrastCheck color.rgb '80, 84, 100' 17)}}border-md-gray{{else}}border-white{{/if}}">{{@key}}</span><br>
+                    <span class="font-normal">{{color.hex}}</span><br>
+                    <span class="font-light text-sm">rgb({{color.rgb}})</span>
+                </div>
+                <table class="text-center text-sm w-[200px]">
+                    <tr
+                        class="border-b {{#if (contrastCheck color.rgb '80, 84, 100' 17)}}border-md-gray{{else}}border-white{{/if}}">
+                        <th class="font-normal text-[14px]">AA-Level</th>
+                        <th class="font-normal text-[14px]">1rem</th>
+                        <th class="font-normal text-[14px]">1.125rem</th>
+                    </tr>
+                    <tr>
+                        <td><span class="px-1 text-white {{#if (isLightColor @key)}}bg-ui-gray{{/if}}">white</span>
+                        </td>
+                        <td class="font-bold">
+                            {{#if (contrastCheck color.rgb '255,255,255' 17)}}
+                            <span class="cas-i-checkmark text-[12px]"></span>
+                            {{else}}
+                            <span class="cas-i-cross text-[10px]"></span>
+                            {{/if}}
+                        </td>
+                        <td class="font-bold text-[12px]">
+                            {{#if (contrastCheck color.rgb '255,255,255' 19.125)}}
+                            <span class="cas-i-checkmark text-[12px]"></span>
+                            {{else}}
+                            <span class="cas-i-cross text-[10px]"></span>
+                            {{/if}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span
+                                class="px-1 text-dk-gray {{#if (isDarkColor @key)}}bg-ui-lt-gray{{/if}}">dk-gray</span>
+                        </td>
+                        <td class="font-bold">
+                            {{#if (contrastCheck color.rgb '80, 84, 100' 17)}}
+                            <span class="cas-i-checkmark text-[12px]"></span>
+                            {{else}}
+                            <span class="cas-i-cross text-[10px]"></span>
+                            {{/if}}
+                        </td>
+                        <td class="font-bold">
+                            {{#if (contrastCheck color.rgb '80, 84, 100' 19.125)}}
+                            <span class="cas-i-checkmark text-[12px]"></span>
+                            {{else}}
+                            <span class="cas-i-cross text-[10px]"></span>
+                            {{/if}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{/each}}

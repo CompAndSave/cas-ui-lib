@@ -1,0 +1,36 @@
+<div class="rounded-md border w-7/12 mt-2" x-data=" {selected: 'preview' }">
+    <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'preview'">Result</button>
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="bg-white self-center py-6" x-show="selected == 'preview'">
+            <form class="flex" id="searchForm">
+                <label for="searchBox" class="sr-only">Search product</label>
+                <input type="text" name="q" value="" placeholder="Find your cartridge or printer model..."
+                    class="focus:shadow-glow box-border w-full rounded-l-full border px-5 shadow-inner focus:border-secondary/70 focus:outline-none placeholder:italic"
+                    maxlength="200" role="combobox" id="searchBox" aria-expanded="false" aria-label="search box"
+                    aria-haspopup="false" aria-autocomplete="both" autocomplete="off" />
+                <button type="submit" title="Search" class="btn rounded-l-none" @click.prevent="">
+                    <span class="cas-i-search search-icon-w" aria-hidden="true"></span>
+                </button>
+            </form>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+            <form class="flex" id="searchForm">
+                <label for="searchBox" class="sr-only">Search product</label>
+                <input type="text" name="q" value="" placeholder="Find your cartridge or printer model..."
+                    class="focus:shadow-glow box-border w-full rounded-l-full border px-5 shadow-inner focus:border-secondary/70 focus:outline-none placeholder:italic"
+                    maxlength="200" role="combobox" id="searchBox" aria-expanded="false" aria-label="search box"
+                    aria-haspopup="false" aria-autocomplete="both" autocomplete="off" />
+                <button type="submit" title="Search" class="btn rounded-l-none" @click.prevent="">
+                    <span class="cas-i-search search-icon-w" aria-hidden="true"></span>
+                </button>
+            </form>
+            </script>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<p>Click on any icon below to copy the class name to clipboard.</p>
+<div class="flex flex-wrap gap-y-5 gap-x-3 mt-8">
+    {{#each @root.icons}}
+    <div class="w-36 text-center border pt-3 pb-2 rounded-md cursor-pointer hover:bg-lt-gray relative"
+        x-data="{input: '{{this}}', showMsg: false}">
+        <div
+            @click="navigator.clipboard.writeText(`<i class='${input}'></i>`), showMsg = true, setTimeout(() => showMsg = false, 500)">
+            <span class="text-2xl {{this}}"></span><br>
+            <span class="text-xs">{{this}}</span>
+        </div>
+        <span x-show="showMsg"
+            class="bg-primary/85 rounded-md z-1 h-full absolute top-0 left-0 w-full before:content-['COPIED'] before:relative before:top-6 before:text-xl before:font-extrabold before:text-off-white"
+            x-cloak></span>
+    </div>
+    {{/each}}
+</div>

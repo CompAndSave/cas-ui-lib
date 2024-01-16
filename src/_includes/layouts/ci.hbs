@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="title" content="{{title}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" media="all" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/Magento_Cms/cms-page.css" />
+    <link rel="stylesheet" type="text/css" media="all"
+        href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+    <link rel="preload" as="font" crossorigin="anonymous" href="fonts/CI-Icons/CI-Icons.ttf" />
+    <link rel="stylesheet" type="text/css" href="https://use.typekit.net/bwf5jyu.css" />
+
+<body class="cms-page-view">
+    <div class="page-wrapper">
+        <header class="page-header">
+            <div class="top-header">
+                <div class="text-center"> <span class="font-bold margin-right-1">FREE SHIPPING ON ORDERS OVER $50
+                        *</span> <a href="#shipping-policy" class="ship-link u-link"
+                        aria-label="Learn more about our shippi g policy">Learn More</a> <span class="show-for-large">
+                        <span class="padding-horizontal-1 show-on-large" aria-hidden="true">|</span> <span
+                            class="font-bold margin-right-1">Save more with our monthly deals</span><a href="#coupon"
+                            class="cou-link u-link">Grab the Deal</a> </span> </div>
+            </div>
+            <div class="main-header">
+                <div class="row head-wrapper align-middle hide-for-large">
+                    <div class="column shrink">
+                        <div class="logo-wrapper"> <a class="logo border-none" href="/"> <img src="images/logo.svg"
+                                    alt="ComboInk Home" width="120" height="40" /> </a> </div>
+                    </div>
+                    <div class="column flex-child-shrink medium-flex-child-auto text-center show-for-medium-only">
+                        <div class="header-search">
+                            <form class="form pill-form" id="tabletglobalSearchForm" action="#nsearch/" method="get">
+                                <label for="tablet-global-search-input" class="show-for-sr">Search product</label>
+                                <input type="text" name="q" value="" placeholder="Enter printer model or cartridge#"
+                                    class="input-text search-txt-input" maxlength="128" role="combobox"
+                                    id="tablet-global-search-input" aria-expanded="false" aria-label="search box"
+                                    aria-haspopup="false" aria-autocomplete="both" autocomplete="off" />
+                                <div class="search-autocomplete"></div> <button type="submit" title="Search"
+                                    class="button icon"> <span class="cas-i-search search-icon-w"
+                                        aria-hidden="true"></span> </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="column shrink text-right">
+                        <div class="row align-right align-middle">
+                            <div class="column shrink text-center">
+                                <nav class="top-account-menu mobile" aria-label="Header Top Menu">
+                                    <ul class="no-bullet margin-bottom-0" aria-label="Header Top Menu">
+                                        <li> <a href="#customer"><span class="cas-i-account"></span> Sign In</a> </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="column shrink text-center"> <span class="divider">|</span> <a
+                                    class="border-none mobile-menu-icon" href="#checkout/cart"
+                                    data-bind="scope: 'minicart_content'"> <span class="show-for-sr">Shopping
+                                        Cart</span> <span class="cas-i-cart" role="presentation"></span> </a> </div>
+                        </div>
+                    </div>
+                    <div class="column small-12 show-for-small-only">
+                        <div class="header-search">
+                            <form class="form pill-form" id="mobileglobalSearchForm" action="#nsearch/" method="get">
+                                <label for="mobile-global-search-input" class="show-for-sr">Search product</label>
+                                <input type="text" name="q" value="" placeholder="Enter printer model or cartridge#"
+                                    class="input-text search-txt-input" maxlength="128" role="combobox"
+                                    id="mobile-global-search-input" aria-expanded="false" aria-label="search box"
+                                    aria-haspopup="false" aria-autocomplete="both" autocomplete="off" />
+                                <div class="search-autocomplete"></div> <button type="submit" title="Search"
+                                    class="button icon"> <span class="cas-i-search search-icon-w"
+                                        aria-hidden="true"></span> </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-top align-middle show-for-large">
+                    <div class="column shrink logo-wrapper">
+                        <div class="logo-wrapper"> <a class="logo border-none" href="/"> <img src="images/logo.svg"
+                                    alt="ComboInk Home" width="120" height="40" /> </a> </div>
+                    </div>
+                    <div class="column">
+                        <div class="row align-right align-middle">
+                            <div class="column">
+                                <div class="header-search">
+                                    <form class="form pill-form" id="desktopglobalSearchForm" action="#nsearch/"
+                                        method="get"> <label for="desktop-global-search-input"
+                                            class="show-for-sr">Search product</label> <input type="text" name="q"
+                                            value="" placeholder="Enter printer model or cartridge#"
+                                            class="input-text search-txt-input" maxlength="128" role="combobox"
+                                            id="desktop-global-search-input" aria-expanded="false"
+                                            aria-label="search box" aria-haspopup="false" aria-autocomplete="both"
+                                            autocomplete="off" />
+                                        <div class="search-autocomplete"></div> <button type="submit" title="Search"
+                                            class="button icon"> <span class="cas-i-search search-icon-w"
+                                                aria-hidden="true"></span> </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="column shrink">
+                                <nav class="top-account-menu" aria-label="Header Top Menu">
+                                    <ul class="no-bullet dropdown menu" aria-label="Header Top Menu" data-dropdown-menu>
+                                        <li class="help has-dropdown-submenu is-dropdown-submenu-parent"> <a href="#"
+                                                class="parent-nav-link">Help</a>
+                                            <ul class="no-bullet account-menu help hide" aria-label="Help Menu">
+                                                <li>
+                                                    <div class="store-hours text-center"> <span
+                                                            class="font-bold margin-bottom-1 display-block">We are
+                                                            available:</span> <span><strong>Phone Support</strong>:
+                                                            Mon-Fri, 6am-4pm PT</span><br> <span><strong>Live
+                                                                Chat</strong>: 7 days a week, 6am-6pm PT</span> </div>
+                                                    <div class="row top-help align-middle">
+                                                        <div class="column">
+                                                            <ul class="no-bullet top-help-links">
+                                                                <li><a href="mailto:wecare@comboink.com">Email Us</a>
+                                                                </li>
+                                                                <li><a
+                                                                        href="help/categories/4411997394061/troubleshoot">Troubleshooting</a>
+                                                                </li>
+                                                                <li><a href="#contact">Support Ticket</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="column text-center"> <button
+                                                                class="ticket-trigger"><img
+                                                                    src="images/assets/chat/ci-chat-online.png"
+                                                                    alt="Live Chat Status"
+                                                                    class="ticket-img live-chat-status"></button> <span
+                                                                class="font-semibold">OR CALL US AT:</span><br>
+                                                            <strong>1-833-786-1266</strong> </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-dropdown-submenu is-dropdown-submenu-parent"> <a href="#"
+                                                class="parent-nav-link">My Account</a>
+                                            <ul class="no-bullet account-menu hide">
+                                                <li> <a href="#customer" class="button secondary login-btn">Log In</a>
+                                                    <div class="register"> <span class="font-semibold">New Customers? <a
+                                                                href="#customer/account/create/referer/aHR0cHM6Ly93d3cuY29tYm9pbmsuY29tL2hwLXByaW50ZXItZmlybXdhcmUtZG93bmdyYWRl"
+                                                                class="register-link">Starts Here</a></span> </div> <a
+                                                        href="#sales/order/history" class="account-menu-box "> <span
+                                                            class="account-links">Orders</span> </a> <a
+                                                        href="#customer " class="account-menu-box middle"> <span
+                                                            class="account-links">Custom Combos</span> </a> <a
+                                                        href="#myprinter/customer/view" class="account-menu-box "> <span
+                                                            class="account-links">My Printer</span> </a> <a
+                                                        href="#customer/account/edit" class="account-menu-box "> <span
+                                                            class="account-links">Account Information</span> </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-dropdown-submenu is-dropdown-submenu-parent border-none show-for-large"
+                                            data-bind="scope: 'minicart_content'"> <a href="#" class="action showcart">
+                                                <!-- ko if: getCartParam('summary_count') --> <span
+                                                    class="minicart-content-count"
+                                                    aria-hidden="true"><!-- ko text: getCartParam('summary_count') --><!-- /ko --></span>
+                                                <span
+                                                    class="show-for-sr"><!-- ko text: getCartParam('summary_count')+' item in your cart' --><!-- /ko --></span>
+                                                <!-- /ko --> <span class="cas-i-cart mobile-menu-icon"
+                                                    aria-hidden="true"></span> <span class="show-for-sr">Go to cart
+                                                    page</span> </a>
+                                            <ul class="no-bullet account-menu mini-cart last hide"
+                                                aria-label="Cart Content"> </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="sections nav-sections hide-for-large" aria-label="Main Menu">
+                <ul class="no-bullet menu" aria-label="Main Menu" role="menu">
+                    <li role="menuitem"> <a href="#" class="parent-nav-link" data-toggle="mobileMainNav">Ink &amp;
+                            Toner</a> </li>
+                    <li role="menuitem"><a href="#coupon" class="nav-menu-link">Coupon</a></li>
+                    <li role="menuitem"><a href="#customer" class="nav-menu-link">Easy Reorder</a> </li>
+                </ul>
+            </nav>
+            <div class="hide-for-large is-hidden" id="mobileMainNav" data-toggler="is-hidden">
+                <ul class="main-nav-menu menu ink-toner-menu" aria-label="Ink and Toner Menu">
+                    <li>
+                        <div class="row">
+                            <div class="column small-12"> <span class="sub-nav-title"><b>Featured Brands</b></span>
+                                <ul class="no-bullet featured brands menu-content">
+                                    <li> <a href="#hewlett-packard-hp-ink-toner-cartridges" title="HP"> HP </a> </li>
+                                    <li> <a href="#epson-ink-toner-cartridges" title="Epson"> Epson </a> </li>
+                                    <li> <a href="#brother-printer-ink-toner" title="Brother"> Brother </a> </li>
+                                    <li> <a href="#canon-printer-ink-cartridges" title="Canon"> Canon </a> </li>
+                                    <li> <a href="#lexmark-printer-cartridges" title="Lexmark"> Lexmark </a> </li>
+                                    <li> <a href="#samsung-printer-ink-toner" title="Samsung"> Samsung </a> </li>
+                                    <li> <a href="#dell-cartridges" title="Dell"> Dell </a> </li>
+                                </ul>
+                            </div>
+                            <div class="column small-12"> <span class="sub-nav-title"><b>Other Brands</b></span>
+                                <ul class="no-bullet brands other menu-content">
+                                    <li><a href="#kodak-printer-ink-toner-cartridges">Kodak</a></li>
+                                    <li><a href="#konica-minolta-printer-ink-laser-toner">Konica-Minolta</a></li>
+                                    <li><a href="#okidata-oki-series-ink-and-toner-cartridges">Okidata</a></li>
+                                    <li><a href="#xerox-printer-ink-toner-cartridges">Xerox</a></li>
+                                    <li><a href="#kyocera-mita-printer-ink-laser-toner">Kyocera-Mita</a></li>
+                                    <li><a href="#pitney-bowes-ink-toner-cartridges">Pitney Bowes</a></li>
+                                    <li><a href="#panasonic-ink-toner-cartridges">Panasonic</a></li>
+                                    <li><a href="#ibm-series-ink-and-toner-cartridges">IBM</a></li>
+                                    <li><a href="#ricoh-printer-ink-toner-cartridges">Ricoh</a></li>
+                                    <li><a href="#apple-printer-ink-toner-cartridges">Apple</a></li>
+                                    <li><a href="#sharp-ink-and-toner-cartridges">Sharp</a></li>
+                                    <li><a href="#compaq-ink-and-toner-cartridges">Compaq</a></li>
+                                    <li><a href="#apollo-ink-and-toner-cartridges">Apollo</a></li>
+                                    <li><a href="#secap-series-ink-and-toner-cartridges">Secap</a></li>
+                                    <li><a href="#bryce-series-ink-and-toner-cartridges">Bryce</a></li>
+                                    <li><a href="#rena-series-ink-and-toner-cartridges">Rena</a></li>
+                                    <li><a href="#astrojet-series-ink-and-toner-cartridges">AstroJet</a></li>
+                                    <li><a href="#neopost-series-ink-and-toner-cartridges">Neopost</a></li>
+                                    <li><a href="#hasler-series-ink-and-toner-cartridges">Hasler</a></li>
+                                    <li><a href="#mimaki-series-ink-and-toner-cartridges">Mimaki</a></li>
+                                    <li><a href="#roland-series-ink-and-toner-cartridges">Roland</a></li>
+                                    <li><a href="#mutoh-series-ink-and-toner-cartridges">Mutoh</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="main-nav-menu mobile menu accessories-menu" aria-label="Accessories Menu"> <span
+                        class="sub-nav-title"><b>Looking for other accessories?</b></span>
+                    <ul class="no-bullet menu-content">
+                        <li><a href="#paper">Papers</a></li>
+                        <li><a href="#cables">Cables</a></li>
+                        <li><a href="#refill-kit">Ink Refill Kit</a></li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="sections nav-sections show-for-large" aria-label="Main Menu">
+                <ul class="no-bullet dropdown menu" aria-label="Main Menu" role="menu" data-dropdown-menu>
+                    <li class="has-dropdown-submenu is-dropdown-submenu-parent"> <a href="#"
+                            class="parent-nav-link">Shop Ink &amp; Toner</a>
+                        <ul class="no-bullet main-nav-menu menu ink-toner-menu hide" aria-label="Ink and Toner Menu">
+                            <li>
+                                <div class="row">
+                                    <div class="column small-12"> <span class="sub-nav-title"><b>Featured
+                                                Brands</b></span>
+                                        <ul class="no-bullet featured brands menu-content">
+                                            <li> <a href="#hewlett-packard-hp-ink-toner-cartridges" title="HP"> HP </a>
+                                            </li>
+                                            <li> <a href="#epson-ink-toner-cartridges" title="Epson"> Epson </a> </li>
+                                            <li> <a href="#brother-printer-ink-toner" title="Brother"> Brother </a>
+                                            </li>
+                                            <li> <a href="#canon-printer-ink-cartridges" title="Canon"> Canon </a> </li>
+                                            <li> <a href="#lexmark-printer-cartridges" title="Lexmark"> Lexmark </a>
+                                            </li>
+                                            <li> <a href="#samsung-printer-ink-toner" title="Samsung"> Samsung </a>
+                                            </li>
+                                            <li> <a href="#dell-cartridges" title="Dell"> Dell </a> </li>
+                                        </ul>
+                                    </div>
+                                    <div class="column small-12"> <span class="sub-nav-title"><b>Other Brands</b></span>
+                                        <ul class="no-bullet brands other menu-content">
+                                            <li><a href="#kodak-printer-ink-toner-cartridges">Kodak</a></li>
+                                            <li><a href="#konica-minolta-printer-ink-laser-toner">Konica-Minolta</a>
+                                            </li>
+                                            <li><a href="#okidata-oki-series-ink-and-toner-cartridges">Okidata</a></li>
+                                            <li><a href="#xerox-printer-ink-toner-cartridges">Xerox</a></li>
+                                            <li><a href="#kyocera-mita-printer-ink-laser-toner">Kyocera-Mita</a></li>
+                                            <li><a href="#pitney-bowes-ink-toner-cartridges">Pitney Bowes</a></li>
+                                            <li><a href="#panasonic-ink-toner-cartridges">Panasonic</a></li>
+                                            <li><a href="#ibm-series-ink-and-toner-cartridges">IBM</a></li>
+                                            <li><a href="#ricoh-printer-ink-toner-cartridges">Ricoh</a></li>
+                                            <li><a href="#apple-printer-ink-toner-cartridges">Apple</a></li>
+                                            <li><a href="#sharp-ink-and-toner-cartridges">Sharp</a></li>
+                                            <li><a href="#compaq-ink-and-toner-cartridges">Compaq</a></li>
+                                            <li><a href="#apollo-ink-and-toner-cartridges">Apollo</a></li>
+                                            <li><a href="#secap-series-ink-and-toner-cartridges">Secap</a></li>
+                                            <li><a href="#bryce-series-ink-and-toner-cartridges">Bryce</a></li>
+                                            <li><a href="#rena-series-ink-and-toner-cartridges">Rena</a></li>
+                                            <li><a href="#astrojet-series-ink-and-toner-cartridges">AstroJet</a></li>
+                                            <li><a href="#neopost-series-ink-and-toner-cartridges">Neopost</a></li>
+                                            <li><a href="#hasler-series-ink-and-toner-cartridges">Hasler</a></li>
+                                            <li><a href="#mimaki-series-ink-and-toner-cartridges">Mimaki</a></li>
+                                            <li><a href="#roland-series-ink-and-toner-cartridges">Roland</a></li>
+                                            <li><a href="#mutoh-series-ink-and-toner-cartridges">Mutoh</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown-submenu is-dropdown-submenu-parent"> <a href="#"
+                            class="parent-nav-link">Shop Accessories</a>
+                        <ul class="no-bullet main-nav-menu menu accs-nav hide" aria-label="Accessories Menu">
+                            <li>
+                                <div class="row acss">
+                                    <div class="column"> <span class="sub-nav-title"><b>Photo Paper</b></span>
+                                        <div class="menu-content"> <a href="#paper" class="acss-link"> <img
+                                                    src="images/navigation/photo-paper.png" alt="Photo Paper"><br> <span
+                                                    class="desc">Print great photos at a cheap price. Our low-cost,
+                                                    high-quality photo paper produces vivid, instant-dry photos.</span>
+                                            </a> </div>
+                                    </div>
+                                    <div class="column"> <span class="sub-nav-title"><b>Cables</b></span>
+                                        <div class="menu-content"> <a href="#cables" class="acss-link"> <img
+                                                    src="images/navigation/cables.png" alt="Cables"><br> <span
+                                                    class="desc">Get well-made, dependable printer cables and
+                                                    accessories for amazingly low prices.</span> </a> </div>
+                                    </div>
+                                    <div class="column"> <span class="sub-nav-title"><b>Refill Kit / Bulk Ink</b></span>
+                                        <div class="menu-content"> <a href="#refill-kit" class="acss-link"> <img
+                                                    src="images/navigation/bulk-refill.png"
+                                                    alt="Refill Kit/ Bulk Ink"><br> <span class="desc">Want to help out
+                                                    the environment? Try refilling your empty ink cartridges for
+                                                    continued use.</span> </a> </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#coupon" class="nav-menu-link">Coupon</a></li>
+                    <li><a href="#customer" class="nav-menu-link">Easy Reorder</a> </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="row column">
+            <nav aria-label="You are here:">
+                <ul class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li class="home home" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="item" href="#" title="Go to Home Page"> <span itemprop="name">Home</span> </a>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="current cms_page" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem"> <span class="show-for-sr">Current: </span><span
+                            itemprop="name">{{title}}</span>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <main id="maincontent" class="page-main"><a id="contentarea" tabindex="-1"></a>
+            <div class="row column">
+                <div class="page-title-wrapper ">
+                    <h1 class="page-title h2 lh-1_2">{{title}}</h1>
+                </div>
+            </div> <!-- CONTENT STARTS HERE -->
+            <div class="main-content"> {{{content}}} </div> <!-- CONTENT ENDS HERE -->
+        </main>
+        <footer class="page-footer">
+            <div class="block newsletter">
+                <div class="row align-middle">
+                    <div class="column small-12 large-6"> <span class="heading">Subscribe to get <span
+                                class="hl-txt">15% OFF</span> your order now</span>
+                        <p> Plus, you'll receive exclusive email offers or news weekly. Don't worry. Your email address
+                            is never shared or sold.<br class="show-for-large-only"> See our <a href="#privacy-policy"
+                                title="Our Privacy Policy" class="sub-policy">Privacy Policy</a> for details. </p>
+                    </div>
+                    <div class="column small-12 large-6 sub-form">
+                        <form class="form subscribe footer-sub" novalidate action="#newsletter/subscriber/new"
+                            method="post" data-mage-init='{"validation": {"errorClass": "mage-error"}}' id="footer-sub">
+                            <label><span class="show-for-sr">Email</span> <input name="email" type="email"
+                                    id="footer-sub-input" placeholder="Your&#x20;Email&#x20;Address" required
+                                    data-validate="{required:true, 'validate-email':true}"></label> <input type="hidden"
+                                name="page_source" value="footer"> <button class="button " title="Start&#x20;Saving"
+                                type="submit"> <span>Start&#x20;Saving</span> </button> </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer content">
+                <div class="row large-unstack"><!--Footer Links-->
+                    <div class="column small-order-2 large-order-1 large-shrink footer-links">
+                        <div class="row accordion accordion-mobile" data-accordion="" data-multi-expand="true"
+                            data-allow-all-closed="true">
+                            <div class="column small-12 large-3 accordion-item" data-accordion-item=""><a
+                                    class="accordion-title" href="#">Company</a>
+                                <div class="accordion-content" data-tab-content="">
+                                    <ul class="no-bullet">
+                                        <li><a href="#about">About Us</a></li>
+                                        <li><a href="#corporate-account-application">Corporate Accounts</a></li>
+                                        <li><a href="#become-an-affiliate">Become An Affiliate</a></li>
+                                        <li><a href="#contact">Contact Us</a></li>
+                                        <li><a href="#reseller-wholesalers">Reseller Program</a></li>
+                                        <li><a href="#welcome/subscribe"> Get 15% Off</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column small-12 large-3 accordion-item" data-accordion-item=""><a
+                                    class="accordion-title" href="#">Policies</a>
+                                <div class="accordion-content" data-tab-content="">
+                                    <ul class="no-bullet">
+                                        <li><a href="#privacy-policy">Privacy Policy</a></li>
+                                        <li><a href="#terms-and-conditions">Terms &amp; Conditions</a></li>
+                                        <li><a href="#shipping-policy">Shipping Policy</a></li>
+                                        <li><a href="#return-policy">Return Policy</a></li>
+                                        <li><a href="#do-not-sell-or-share-my-personal-information">Do Not Sell My
+                                                Personal Information</a></li>
+                                        <li><a href="#privacy-center/account/check">Privacy Center</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column small-12 large-3 accordion-item" data-accordion-item=""><a
+                                    class="accordion-title" href="#">Resources</a>
+                                <div class="accordion-content" data-tab-content="">
+                                    <ul class="no-bullet">
+                                        <li><a href="#help/categories/4411992978445/ink-knowledge">Ink Knowledge
+                                                Base</a></li>
+                                        <li><a href="#help/categories/4411997394061/troubleshoot">Ink
+                                                Troubleshooting</a></li>
+                                        <li><a href="#epson-printer-firmware-reset-downgrade">Epson Firmware Reset</a>
+                                        </li>
+                                        <li><a href="#hp-printer-firmware-downgrade">HP Printer Firmware Downgrade</a>
+                                        </li>
+                                        <li><a href="#printer-drivers-support">Printer Support</a></li>
+                                        <li><a href="#ink-toner-recycling-guide">Recycling Guide</a></li>
+                                        <li><a href="#environmentally-friendly-green-ink-and-toner-cartridges">Eco-Friendly
+                                                Ink</a></li>
+                                        <li><a href="#help">Help Center</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column small-12 large-3 accordion-item" data-accordion-item=""><a
+                                    class="accordion-title" href="#">Account</a>
+                                <div class="accordion-content" data-tab-content="">
+                                    <ul class="no-bullet">
+                                        <li><a href="#customer/account">My Account</a></li>
+                                        <li><a href="#help/categories/4411997390221/account">Help with My Account</a>
+                                        </li>
+                                        <li><a href="#order-tracking">Order Status</a></li>
+                                        <li><a href="#checkout/cart">View Cart</a></li>
+                                        <li><a href="#rma/index">Need to Return Item?</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column small-order-1 large-order-2 footer-co-info text-center"> <span
+                            class="social-block-title">Connect With Us for More Offers!</span>
+                        <div class="social-media">
+                            <div class="row small-12">
+                                <div class="column"><a href="/www.facebook.com/comboink" class="border-none"
+                                        target="_blank"> <span class="show-for-sr">facebook link opens in a new
+                                            window</span> <span class="cas-i-facebook social-media-icons"
+                                            aria-hidden="true"></span> </a></div>
+                                <div class="column"><a href="/twitter.com/comboink" class="border-none" target="_blank">
+                                        <span class="show-for-sr">twitter link opens in a new window</span> <span
+                                            class="cas-i-twitter social-media-icons" aria-hidden="true"></span> </a>
+                                </div>
+                                <div class="column"><a href="/www.pinterest.com/ComboInk/" class="border-none"
+                                        target="_blank"> <span class="show-for-sr">pinterest link opens in a new
+                                            window</span> <span class="cas-i-pinterest social-media-icons"
+                                            aria-hidden="true"></span> </a></div>
+                                <div class="column"><a href="/www.comboink.com/blog/" class="border-none"
+                                        target="_blank"> <span class="show-for-sr">wordpress link opens in a new
+                                            window</span> <span class="cas-i-wordpress social-media-icons"
+                                            aria-hidden="true"></span> </a></div>
+                                <div class="column"><a href="/www.youtube.com/c/Comboink" class="border-none"
+                                        target="_blank"> <span class="show-for-sr">youtube link opens in a new
+                                            window</span> <span class="cas-i-youtube social-media-icons"
+                                            aria-hidden="true"></span> </a></div>
+                            </div>
+                        </div>
+                        <div class="v-card">
+                            <div class="row collapse">
+                                <div class="column shrink"> <img src="images/icons/logo-icon-circle.svg"
+                                        class="logo-icon" alt="ComboInk icon logo" width="45" /> </div>
+                                <div class="column shrink">
+                                    <p class="store-info"> <small> <strong>ComboInk</strong><br>33268 Central
+                                            Ave.<br>Union City, CA 94587 </small> </p>
+                                </div>
+                            </div>
+                            <p class="store-hours"> <small>Toll Free No. <a href="tel:+1-833-786-1266"
+                                        class="white-link">1-833-786-1266</a><br> Mon - Fri, 6am-4pm PT </small> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer policy">
+                <div class="row copyright-wrapper medium-unstack">
+                    <div class="column shrink margin-right-3 copyright">
+                        <p class="tiny-txt">Copyright © 2023 ComboInk. All rights reserved.</p>
+                    </div>
+                    <div class="column disclaimer text-right">
+                        <p class="medium-text-right tiny-txt">Apple, Brother, Dell, HP, IBM, Lexmark, Canon, Epson,
+                            Xerox and other manufacturer brand names and logos are registered trademarks of their
+                            respective owners. Any and all brand name designations or references are made solely for
+                            purposes of demonstrating compatibility.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/scrollTo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <script>
+        $(document).foundation();
+
+    </script>
+</body>
+
+</html>

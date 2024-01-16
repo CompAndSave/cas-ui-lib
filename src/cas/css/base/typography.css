@@ -1,0 +1,48 @@
+@layer base {
+  h1,
+  .h1 {
+    @apply font-display font-extrabold sm:text-3xl md:text-4xl;
+  }
+  h2,
+  .h2 {
+    @apply font-display font-extrabold sm:text-2xl md:text-3xl;
+  }
+  h3,
+  .h3 {
+    @apply font-bold sm:text-xl md:text-2xl;
+  }
+  h4,
+  .h4 {
+    @apply font-bold sm:text-lg md:text-xl;
+  }
+  h5,
+  .h5 {
+    @apply font-bold sm:text-base md:text-lg;
+  }
+
+  [class^='list-image-'] {
+    &:marker {
+      width: 50px;
+      heihgt: 50px;
+    }
+  }
+  p {
+    @apply mb-4 mt-2;
+  }
+  a {
+    @apply border-b-2 border-dotted border-lt-gray font-semibold text-primary hover:border-transparent hover:text-secondary focus:border-transparent focus:outline-dotted focus:outline-2 focus:outline-secondary;
+  }
+  blockquote {
+    @apply relative rounded-lg border p-8 text-center text-lg before:absolute before:-top-4 before:left-5 before:inline-block before:w-[50px] before:bg-white before:px-2 before:content-[url('../images/icons/lquo.svg')] after:absolute after:-bottom-4 after:right-5 after:inline-block after:w-[50px] after:bg-white after:px-2 after:content-[url('../images/icons/rquo.svg')];
+  }
+  cite {
+    @apply mt-1 block text-base text-md-gray before:mr-2 before:content-['\2014'];
+  }
+}
+.anchor-link {
+  @apply relative mr-4 after:absolute after:-right-4 after:-top-1 after:inline-block after:h-[12px] after:w-[12px] after:content-[url('../images/icons/chain.svg')];
+}
+
+.ext-link {
+  @apply relative mr-4 after:absolute after:-right-4 after:-top-1 after:inline-block after:h-[11px] after:w-[11px] after:content-[url('../images/icons/external.svg')];
+}

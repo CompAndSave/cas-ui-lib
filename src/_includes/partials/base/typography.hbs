@@ -1,0 +1,174 @@
+<div class="flex mt-4 flex-wrap">
+    <table class="text-left w-auto">
+        {{#each @root.typography as |type|}}
+        <tr class="{{#unless @last}}border-b border-dotted{{/unless}}">
+            <th class="p-4 align-top" x-data="{ colorClass: '' }">
+                <span class="{{type.class}}"
+                    :class="colorClass? (colorClass === 'white'? `text-${colorClass} bg-dk-gray`: `text-${colorClass}`) : ''">{{type.type}}</span>
+                <div class="mt-2">
+                    {{#each type.colors}}
+                    <span @click="colorClass = '{{this}}'"
+                        class="bg-{{this}} rounded-full w-3.5 h-3.5 inline-block mr-2 {{#if (compare this '===' 'white')}}border border-ui-lt-gray{{/if}} cursor-pointer"></span>
+                    {{/each}}
+                </div>
+
+            </th>
+            <td class="p-4 align-top {{type.class}}">{{type.font}}</td>
+            <td class="p-4 align-top">
+                {{#each type.size as | size |}}
+                {{#if (compare @key '===' 'all')}}
+                {{this}}
+                {{else}}
+                <span class="font-semibold">{{@key}}</span>: {{this}}
+                {{#unless @last}}<br>{{/unless}}
+                {{/if}}
+                {{/each}}
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+    <div class="w-5/12 ml-32">
+        <h3>Mulish</h3>
+        <p>Mulish is our main font used for body copy and subheadlines. It’s
+            wide, round, and airy appearance make for easy andcomfortable
+            reading.</p>
+        <div class="flex flex-wrap mt-2 mb-6 -mx-4">
+            <div class="text-center px-4">
+                <span class="text-[55px] font-extrabold block leading-none">Aa</span>
+                <span class="text-xs">Extra Bold - 800</span>
+            </div>
+            <div class="text-center px-4">
+                <span class="text-[55px] font-bold block leading-none">Aa</span>
+                <span class="text-xs">Bold - 700</span>
+            </div>
+            <div class="text-center px-4">
+                <span class="text-[55px] font-semibold block leading-none">Aa</span>
+                <span class="text-xs">Semi Bold - 600</span>
+            </div>
+            <div class="text-center px-4">
+                <span class="text-[55px] font-normal block leading-none">Aa</span>
+                <span class="text-xs">Normal - 400</span>
+            </div>
+            <div class="text-center px-4">
+                <span class="text-[55px] font-light block leading-none">Aa</span>
+                <span class="text-xs">Light - 300</span>
+            </div>
+        </div>
+        <h3 class="font-display">Work Sans</h3>
+        <p>Work Sans is our accent font meant to grab attention and
+            callout information. It’s playfulness and bold setting allow us to be
+            assertive in a casual and friendly way.</p>
+        <div class="flex flex-wrap mt-2 -mx-4">
+            <div class="text-center px-4">
+                <span class="text-[55px] font-display font-bold block leading-none">Aa</span>
+                <span class="text-xs">Bold - 700</span>
+            </div>
+            <div class="text-center px-4">
+                <span class="text-[55px] font-display font-normal block leading-none">Aa</span>
+                <span class="text-xs">Semi Bold - 500</span>
+            </div>
+        </div>
+        <div class="mt-8">
+            <h3 class="sub-title">LINK</h3>
+            <p>This is a <a href="#">normal
+                    link</a>.</p>
+            <p>This is an <a href="#" class="anchor-link">anchor
+                    link</a>. Use <code class="bg-lt-gray p-0.5">anchor-link</code> class on the a tag.</p>
+            <p>This is an <a href="#" class="ext-link">external link</a>. Use <code
+                    class="bg-lt-gray p-0.5">ext-link</code> class on the a tag.</p>
+        </div>
+    </div>
+    <div class="mt-8 w-full">
+        <h3 class="sub-title">Blockquote</h3>
+        <div class="rounded-md border w-6/12 mt-2" x-data=" {selected: 'preview' }">
+            <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'preview'">Result</button>
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'code'">Code</button>
+            </div>
+            <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+                <div class="bg-white" x-show="selected == 'preview'">
+                    <blockquote class="mt-2">
+                        Those people who think they know everything are a great annoyance to those of us who do.
+                        <cite>Isaac Asimov</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+                    <script type="text/plain" class="language-markup">
+                    <blockquote class="mt-8">
+                        Those people who think they know everything are a great annoyance to those of us who do.
+                        <cite>Isaac Asimov</cite>
+                    </blockquote>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-10 w-full">
+        <h3 class="sub-title">LIST</h3>
+        <div class="rounded-md border min-w-[900px] max-w-[900px] mt-2" x-data=" {selected: 'preview' }">
+            <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'preview'">Result</button>
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'code'">Code</button>
+            </div>
+            <div class="flex flex-col p-4 rounded-b-md items-center"
+                :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+                <div class="bg-white" x-show="selected == 'preview'">
+                    <div class="flex">
+                        <div class="px-6 mr-10">
+                            <h4 class="text-base mb-2">Unordered list</h4>
+                            <ul class="list-disc list-inside indent-2">
+                                <li class="py-0.5">Item 1</li>
+                                <li class="py-0.5">Item 2</li>
+                                <li class="py-0.5">Item 3</li>
+                            </ul>
+                        </div>
+                        <div class="px-6 mr-10">
+                            <h4 class="text-base mb-2">Ordered list</h4>
+                            <ol class="list-decimal list-outside indent-2 ml-6">
+                                <li class="py-0.5">Item 1</li>
+                                <li class="py-0.5">Item 2</li>
+                                <li class="py-0.5">Item 3</li>
+                            </ol>
+                        </div>
+                        <div class="px-6">
+                            <h4 class="text-base mb-2">Image list</h4>
+                            <ol class="list-image-checkmark list-outside indent-2 ml-6">
+                                <li class="py-0.5">Item 1</li>
+                                <li class="py-0.5">Item 2</li>
+                                <li class="py-0.5">Item 3</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+                    <script type="text/plain" class="language-markup">
+                    <!-- Unordered List -->
+                    <ul class="list-disc list-inside indent-2">
+                        <li class="py-0.5">Item 1</li>
+                        <li class="py-0.5">Item 2</li>
+                        <li class="py-0.5">Item 3</li>
+                    </ul>
+
+                    <!-- Ordered List -->
+                    <ol class="list-decimal list-outside indent-2 ml-6">
+                        <li class="py-0.5">Item 1</li>
+                        <li class="py-0.5">Item 2</li>
+                        <li class="py-0.5">Item 3</li>
+                    </ol>
+
+                    <!-- Image List -->
+                    <ol class="list-image-checkmark list-outside indent-2 ml-6">
+                        <li class="py-0.5">Item 1</li>
+                        <li class="py-0.5">Item 2</li>
+                        <li class="py-0.5">Item 3</li>
+                    </ol>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="mt-2 w-7/12 rounded-md border" x-data=" {selected: 'preview' }">
+    <div class="flex justify-end gap-6 rounded-t-md bg-black px-4 py-2">
+        <button class="rounded-full px-3 py-1 font-semibold text-ui-lt-gray hover:bg-dk-gray"
+            @click="selected = 'preview'">Result</button>
+        <button class="rounded-full px-3 py-1 font-semibold text-ui-lt-gray hover:bg-dk-gray"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col rounded-b-md p-4" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="self-center bg-white py-8" x-show="selected == 'preview'">
+            <nav aria-label="pagination">
+                <ul class="flex gap-6">
+                    <li><a href="#" class="rounded-md border-0 p-1 text-dk-gray hover:bg-lt-gray"><span
+                                class="inline-block -scale-100">&#10132;</span>
+                            Previous
+                            <span class="sr-only">page</span></a>
+                    </li>
+                    <li><a href="#" class="rounded-sm border-0 p-1 text-dk-gray hover:bg-lt-gray"><span
+                                class="sr-only">page</span>
+                            1<span class="sr-only">
+                                (first page)</span></a></li>
+                    <li><a href="#" class="rounded-sm border-0 p-1 text-dk-gray hover:bg-lt-gray"><span
+                                class="sr-only">page</span>
+                            2</a></li>
+                    <li><span>&#8230;</span></li>
+                    <li><a href="#" class="rounded-sm border-0 p-1 text-dk-gray hover:bg-lt-gray"><span
+                                class="sr-only">page</span>
+                            7</a></li>
+                    <li><span class="rounded-sm bg-primary p-1 font-extrabold text-white" aria-label="page 8"
+                            aria-current="page">8</span><span class="sr-only">
+                            (last page)</span></li>
+                    <li><a href="#" class="cursor-not-allowed border-0 p-1 text-ui-gray hover:text-ui-gray"
+                            disabled>Next
+                            &#10132;<span class="sr-only">page</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+            <nav aria-label="pagination" class="mt-6">
+                <ul class="flex gap-6">
+                    <li><a href="#" class="rounded-md border-0 p-1 text-dk-gray hover:bg-lt-gray"><span
+                                class="inline-block -scale-100">&#10132;</span>
+                            Previous
+                            <span class="sr-only">page</span></a>
+                    </li>
+                    <li><a href="#" class="rounded-sm border-0 p-1 text-dk-gray hover:bg-lt-gray"><span class="sr-only">page</span>
+                            1<span class="sr-only">
+                                (first page)</span></a></li>
+                    <li><a href="#" class="rounded-sm border-0 p-1 text-dk-gray hover:bg-lt-gray"><span class="sr-only">page</span>
+                            2</a></li>
+                    <li><span>&#8230;</span></li>
+                    <li><a href="#" class="rounded-sm border-0 p-1 text-dk-gray hover:bg-lt-gray"><span class="sr-only">page</span>
+                            7</a></li>
+                    <li><span class="rounded-sm bg-primary p-1 font-extrabold text-white" aria-label="page 8"
+                            aria-current="page">8</span><span class="sr-only">
+                            (last page)</span></li>
+                    <li><a href="#" class="cursor-not-allowed border-0 p-1 text-ui-gray hover:text-ui-gray" disabled>Next
+                            &#10132;<span class="sr-only">page</span></a></li>
+                </ul>
+            </nav>
+            </script>
+        </div>
+    </div>
+</div>

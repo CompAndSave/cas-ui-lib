@@ -1,0 +1,49 @@
+[
+    {
+        "group": "base",
+        "items": [
+            "logo",
+            "colors",
+            "typography"
+        ]
+    },
+    {
+        "group": "elements",
+        "items": [
+            "box",
+            "button",
+            "callout",
+            "divider",
+            "icons",
+            "progress-bar",
+            "table",
+            "tag",
+            "toggle"
+        ]
+    },
+    {
+        "group": "components",
+        "items": [
+            "accordion",
+            "breadcrumbs",
+            "dropdown",
+            "modal",
+            "off-canvas",
+            "pagination",
+            "search-box",
+            "tabs",
+            "tooltip"
+        ]
+    },
+    {
+        "group": "forms",
+        "items": [
+            "input",
+            "textarea",
+            "checkbox",
+            "radio",
+            "select",
+            "file"
+        ]
+    }
+]

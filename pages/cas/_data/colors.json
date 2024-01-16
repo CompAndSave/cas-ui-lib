@@ -1,0 +1,101 @@
+[
+    {
+        "group": "Branded",
+        "colors": {
+            "primary": {
+                "hex": "#0073c0",
+                "rgb": "0, 115, 192"
+            },
+            "secondary": {
+                "hex": "#0196e4",
+                "rgb": "0, 115, 192"
+            },
+            "midnight": {
+                "hex": "#202234",
+                "rgb": "32, 34, 52"
+            },
+            "ice": {
+                "hex": "#f4fbfe",
+                "rgb": "244, 251, 254"
+            },
+            "magenta": {
+                "hex": "#fa2a92",
+                "rgb": "250, 42, 146"
+            },
+            "green": {
+                "hex": "#00aa61",
+                "rgb": "0, 170, 97"
+            },
+            "orange": {
+                "hex": "#e12b1d",
+                "rgb": "225, 43, 29"
+            },
+            "dk-yellow": {
+                "hex": "#f9c035",
+                "rgb": "249, 192, 53"
+            },
+            "lt-yellow": {
+                "hex": "#fad71c",
+                "rgb": "250, 215, 28"
+            }
+        }
+    },
+    {
+        "group": "Neutral",
+        "colors": {
+            "white": {
+                "hex": "#ffffff",
+                "rgb": "255, 255, 255"
+            },
+            "off-white": {
+                "hex": "#f4f4f4",
+                "rgb": "244, 244, 244"
+            },
+            "lt-gray": {
+                "hex": "#dfe3e4",
+                "rgb": "223, 227, 228"
+            },
+            "ui-lt-gray": {
+                "hex": "#c1c6cb",
+                "rgb": "193, 198, 203"
+            },
+            "ui-gray": {
+                "hex": "#a3a8b2",
+                "rgb": "163, 168, 178"
+            },
+            "md-gray": {
+                "hex": "#676d7f",
+                "rgb": "103, 109, 127"
+            },
+            "dk-gray": {
+                "hex": "#505464",
+                "rgb": "80, 84, 100"
+            },
+            "black": {
+                "hex": "#333333",
+                "rgb": "51, 51, 51"
+            }
+        }
+    },
+    {
+        "group": "Functional",
+        "colors": {
+            "success": {
+                "hex": "#00aa61",
+                "rgb": "0, 170, 97"
+            },
+            "warning": {
+                "hex": "#f9c035",
+                "rgb": "249, 192, 53"
+            },
+            "info": {
+                "hex": "#0196e4",
+                "rgb": "0, 115, 192"
+            },
+            "alert": {
+                "hex": "#e12b1d",
+                "rgb": "225, 43, 29"
+            }
+        }
+    }
+]

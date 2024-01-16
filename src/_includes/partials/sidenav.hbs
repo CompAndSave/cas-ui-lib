@@ -1,0 +1,18 @@
+<nav
+    class='mt-4 px-8 pb-6 text-white overflow-y-auto z-20 h-full bg-midnight scrolling-touch lg:h-[calc(100vh-3rem)] lg:block lg:sticky top:24 lg:top-28'>
+    <ul>
+        {{#each sidebarNav as |nav|}}
+        <li class="mb-2">
+            <span class='text-xs font-extrabold uppercase text-secondary tracking-wide'>{{nav.section_title}}</span>
+            <ul>
+                {{#each nav.menu as |menu|}}
+                <li class='text-ui-light-gray py-0.5'>
+                    <a @click="scrollToTarget($event, '{{menu.id}}'); section = '{{menu.id}}'"
+                        class="text-sm sidebar-nav font-normal cursor-pointer">{{menu.title}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </li>
+        {{/each}}
+    </ul>
+</nav>

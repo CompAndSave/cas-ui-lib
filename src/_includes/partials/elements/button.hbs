@@ -1,0 +1,90 @@
+<div class="mt-4 flex flex-wrap -mx-6">
+    <div class="w-6/12 p-6">
+        <h3 class="sub-title">SOLID</h3>
+        <div class="rounded-md border w-full mt-2" x-data=" {selected: 'preview' }">
+            <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'preview'">Result</button>
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'code'">Code</button>
+            </div>
+            <div class="flex flex-col p-6 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+                <div class="bg-white self-center" x-show="selected == 'preview'">
+                    <div class="flex flex-wrap">
+                        <button type="button" class="btn m-2 capitalize">Default</button>
+                        {{#each @root.cas.buttonColors}}
+                        <button type="button" class="btn btn-{{this}} m-2 capitalize">{{this}}</button>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+                    <script type="text/plain" class="language-markup">
+                    <button type="button" class="btn">Default</button>
+                    {{#each @root.cas.buttonColors}}
+                    <button type="button" class="btn btn-{{this}}">{{this}}</button>
+                    {{/each}}
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-6/12 p-6">
+        <h3 class="sub-title">HOLLOW</h3>
+        <div class="rounded-md border w-full mt-2" x-data=" {selected: 'preview' }">
+            <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'preview'">Result</button>
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'code'">Code</button>
+            </div>
+            <div class="flex flex-col p-6 rounded-b-md bg-midnight">
+                <div class="bg-midnight rounded-md self-center" x-show="selected == 'preview'">
+                    <div class="flex mt-3 flex-wrap">
+                        <button type="button" class="btn-hollow dk-bg m-2 capitalize">Default</button>
+                        {{#each @root.cas.buttonColors}}
+                        <button type="button"
+                            class="btn-hollow dk-bg btn-hollow-{{this}} m-2 capitalize">{{this}}</button>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+                    <script type="text/plain" class="language-markup">
+                    {{#each @root.cas.buttonColors}}
+                    <button type="button" class="btn-hollow btn-hollow-{{this}} dk-bg">{{this}}</button>
+                    {{/each}}
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-6">
+        <h3 class="sub-title">NEUTRAL</h3>
+        <div class="rounded-md border w-full mt-2" x-data=" {selected: 'preview' }">
+            <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'preview'">Result</button>
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'code'">Code</button>
+            </div>
+            <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+                <div class="bg-white self-center" x-show="selected == 'preview'">
+                    <div class="flex -mx-4 mt-3 flex-wrap">
+                        {{#each @root.cas.neutButtonColors}}
+                        <button type="button" class="btn-hollow btn-hollow-{{this}} m-2 capitalize">{{this}}</button>
+                        {{/each}}
+                        <button type="button" class="btn disabled m-2 capitalize" disabled>Disabled</button>
+                    </div>
+                </div>
+                <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+                    <script type="text/plain" class="language-markup">
+                    {{#each @root.cas.neutButtonColors}}
+                    <button type="button" class="btn-hollow btn-hollow-{{this}}">{{this}}</button>
+                    {{/each}}
+                    <button type="button" class="btn disabled" disabled>Disabled</button>
+                    </script>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="rounded-md border w-7/12 mt-2" x-data=" {selected: 'preview' }">
+    <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'preview'">Result</button>
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="bg-white self-center" x-show="selected == 'preview'">
+            <div x-data="{charCount: 0}">
+                <label for="messageInput" class="font-bold inline-block mb-1">Message</label>
+                <textarea name="messageInput" id="messageInput" cols="50" rows="5" maxlength="150"
+                    class="block resize border shadow-inner rounded-md px-4 py-2 focus:border-secondary focus:shadow-glow focus:outline-none placeholder:italic"
+                    :class="charCount > $refs.countCharInput.maxLength? 'invalid bg-invalid border-alert/30' : 'border-gray-300'"
+                    role="textbox" aria-describedby="charCounter" x-ref="countCharInput"
+                    x-on:keyup="charCount = $refs.countCharInput.value.length"></textarea>
+                <div id="charCounter" class="text-sm italic mt-1">
+                    <span id="currentChar" x-text="charCount"></span> of <span
+                        x-text="$refs.countCharInput.maxLength"></span>
+                    characters
+                    remaining</span>
+                </div>
+                <span class="block text-sm mt-2 text-alert font-semibold italic" role="alert"
+                    x-show="charCount > $refs.countCharInput.maxLength" x-cloak>You've
+                    reached maximum characters allowed.</span>
+            </div>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+            <div x-data="{charCount: 0}">
+                <label for="messageInput" class="font-bold inline-block mb-1">Message</label>
+                <textarea name="messageInput" id="messageInput" cols="50" rows="5" maxlength="150"
+                    class="block resize border shadow-inner rounded-md px-4 py-2 focus:border-secondary focus:shadow-glow focus:outline-none placeholder:italic"
+                    :class="charCount > $refs.countCharInput.maxLength? 'invalid bg-invalid border-alert/30' : 'border-gray-300'"
+                    role="textbox" aria-describedby="charCounter" x-ref="countCharInput"
+                    x-on:keyup="charCount = $refs.countCharInput.value.length"></textarea>
+                <div id="charCounter" class="text-sm italic mt-1">
+                    <span id="currentChar" x-text="charCount"></span> of <span x-text="$refs.countCharInput.maxLength"></span>
+                    characters
+                    remaining</span>
+                </div>
+                <span class="block text-sm mt-2 text-alert font-semibold italic" role="alert"
+                    x-show="charCount > $refs.countCharInput.maxLength" x-cloak>You've
+                    reached maximum characters allowed.</span>
+            </div>
+            </script>
+        </div>
+    </div>
+</div>

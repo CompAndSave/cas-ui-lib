@@ -1,0 +1,162 @@
+<div class="rounded-md border w-7/12 mt-2" x-data=" {selected: 'preview' }">
+    <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'preview'">Result</button>
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="bg-white self-center" x-show="selected == 'preview'">
+            <div x-data="initData()">
+                <form class="bg-ice p-8 rounded-md shadow-md" @submit.prevent="submitData">
+                    <span class="font-bold mb-1 block">Password <span class="text-orange"
+                            aria-hidden="true">*</span></span>
+                    <span id="passHint" class="block text-sm mb-3">Minimum of 6 characters, with at least one uppercase,
+                        one
+                        lowercase,
+                        one
+                        number,
+                        and one special
+                        character or symbol(e.g., ! @ # ?).</span>
+                    <div class="flex gap-5">
+                        <label>
+                            <span class="sr-only">Enter password</span>
+                            <input type="password" id="password" placeholder="create password"
+                                aria-describedby="passHint passToggle" aria-required="true"
+                                class="peer focus:shadow-glow box-border rounded-md border px-4 py-2 shadow-inner focus:border-secondary/70 focus:outline-none placeholder:italic"
+                                x-model="formData.pass"
+                                :class="!isValid && !passValid(formData.pass)? 'invalid bg-invalid border-alert/40' : 'border-gray-300'"
+                                :type="formData.showPass? 'text' : 'password'" autocomplete="off">
+                            <span class="block text-sm mt-2 text-alert font-semibold italic" role="alert"
+                                x-show="!isValid && !passValid(formData.pass)" x-cloak>
+                                <span x-text="!passValid(formData.pass)? 'Please input your valid password' : ''">
+                                </span>
+                            </span>
+                        </label>
+                        <label>
+                            <span class="sr-only">Re-enter password</span>
+                            <input type="password" id="passwordCopy" placeholder="re-type password"
+                                aria-describedby="passHint passToggle" aria-required="true"
+                                class="peer focus:shadow-glow box-border rounded-md border px-4 py-2 shadow-inner focus:border-secondary/70 focus:outline-none placeholder:italic"
+                                x-model="formData.passConfirm"
+                                :class="!isValid && (!passMatch() || formData.passConfirm.length <= 0)? 'invalid bg-invalid border-alert/30' : 'border-gray-300'"
+                                :type="formData.showPass? 'text' : 'password'" autocomplete="off">
+                            <span class="block text-sm mt-2 text-alert font-semibold italic" role="alert" x-cloak
+                                x-show="!isValid && (!passMatch() || formData.passConfirm.length <= 0)">
+                                <span
+                                    x-text="!passMatch()? 'Password has to match' : (formData.passConfirm.length <= 0 ? 'Please re-enter your password' : '')"></span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div id="passToggle" class="mt-4">
+                        <input type="checkbox" id="showPass" class="peer sr-only" x-model="formData.showPass">
+                        <label for="showPass" class="select-none font-semibold checkbox">Show Password</label>
+                    </div>
+                    <button class="btn mt-4">Create New Password</button>
+                </form>
+            </div>
+            <script>
+                function initData() {
+                    return {
+                        formData: {
+                            pass: "",
+                            passConfirm: "",
+                            showPass: false
+                        },
+                        isValid: true,
+                        passValid(pass) {
+                            const pattern = /(?=^.{6,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/
+                            return isValid = pattern.test(pass)
+                        },
+                        passMatch() {
+                            return isValid = (this.formData.pass === this.formData.passConfirm)
+                        },
+                        submitData() {
+                            if (!this.formData.pass || !this.formData.passConfirm || !this.passMatch() || !this.passValid(this.formData.pass)) {
+                                this.isValid = false
+                                return;
+                            }
+                        }
+                    }
+                }
+            </script>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+            <div x-data="initData()">
+                <form class="bg-ice p-8 rounded-md shadow-md" @submit.prevent="submitData">
+                    <span class="font-bold mb-1 block">Password <span class="text-orange"
+                            aria-hidden="true">*</span></span>
+                    <span id="passHint" class="block text-sm mb-3">Minimum of 6 characters, with at least one uppercase, one lowercase, one number, and one special character or symbol(e.g., ! @ # ?).</span>
+                    <div class="flex gap-5">
+                        <label>
+                            <span class="sr-only">Enter password</span>
+                            <input type="password" id="password" placeholder="create password"
+                                aria-describedby="passHint passToggle" aria-required="true"
+                                class="peer focus:shadow-glow box-border rounded-md border px-4 py-2 shadow-inner focus:border-secondary/70 focus:outline-none placeholder:italic"
+                                x-model="formData.pass"
+                                :class="!isValid && !passValid(formData.pass)? 'invalid bg-invalid border-alert/40' : 'border-gray-300'"
+                                :type="formData.showPass? 'text' : 'password'" autocomplete="off">
+                            <span class="block text-sm mt-2 text-alert font-semibold italic" role="alert"
+                                x-show="!isValid && !passValid(formData.pass)" x-cloak>
+                                <span x-text="!passValid(formData.pass)? 'Please input your valid password' : ''">
+                                </span>
+                            </span>
+                        </label>
+                        <label>
+                            <span class="sr-only">Re-enter password</span>
+                            <input type="password" id="passwordCopy" placeholder="re-type password"
+                                aria-describedby="passHint passToggle" aria-required="true"
+                                class="peer focus:shadow-glow box-border rounded-md border px-4 py-2 shadow-inner focus:border-secondary/70 focus:outline-none placeholder:italic"
+                                x-model="formData.passConfirm"
+                                :class="!isValid && (!passMatch() || formData.passConfirm.length <= 0)? 'invalid bg-invalid border-alert/30' : 'border-gray-300'"
+                                :type="formData.showPass? 'text' : 'password'" autocomplete="off">
+                            <span class="block text-sm mt-2 text-alert font-semibold italic" role="alert" x-cloak
+                                x-show="!isValid && (!passMatch() || formData.passConfirm.length <= 0)">
+                                <span
+                                    x-text="!passMatch()? 'Password has to match' : (formData.passConfirm.length <= 0 ? 'Please re-enter your password' : '')"></span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div id="passToggle" class="mt-4">
+                        <input type="checkbox" id="showPass" class="peer sr-only" x-model="formData.showPass">
+                        <label for="showPass" class="select-none font-semibold checkbox">Show Password</label>
+                    </div>
+                    <button class="btn mt-4">Create New Password</button>
+                </form>
+            </div>
+            </script>
+        </div>
+    </div>
+</div>
+
+<div class="mt-6 bg-midnight py-6 px-10">
+    <pre><code class="language-js">
+/** Sample of form validation **/        
+function initData() {
+    return {
+        formData: {
+            pass: "",
+            passConfirm: "",
+            showPass: false
+        },
+        isValid: true,
+        passValid(pass) {
+            const pattern = /(?=^.{6,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/
+            return isValid = pattern.test(pass)
+        },
+        passMatch() {
+            return isValid = (this.formData.pass === this.formData.passConfirm)
+        },
+        submitData() {
+            if (!this.formData.pass || !this.formData.passConfirm || !this.passMatch() || !this.passValid(this.formData.pass)) {
+                this.isValid = false
+                return;
+            }
+        }
+    }
+}
+    </code></pre>
+</div>

@@ -1,0 +1,157 @@
+[
+    {
+        "section_title": "Base Elements",
+        "menu": [
+            {
+                "title": "Logo",
+                "id": "logo",
+                "partial": "partials/base/logo"
+            },
+            {
+                "title": "Colors",
+                "id": "colors",
+                "partial": "partials/base/colors"
+            },
+            {
+                "title": "Typography",
+                "id": "typography",
+                "partial": "partials/base/typography"
+            }
+        ]
+    },
+    {
+        "section_title": "Elements",
+        "menu": [
+            {
+                "title": "Button",
+                "id": "button",
+                "partial": "partials/elements/button"
+            },
+            {
+                "title": "Box",
+                "id": "box",
+                "partial": "partials/elements/box"
+            },
+            {
+                "title": "Icons",
+                "id": "icons",
+                "partial": "partials/elements/icons"
+            },
+            {
+                "title": "Callout",
+                "id": "callout",
+                "partial": "partials/elements/callout"
+            },
+            {
+                "title": "Divider",
+                "id": "divider",
+                "partial": "partials/elements/divider"
+            },
+            {
+                "title": "Progress Bar",
+                "id": "progress-bar",
+                "partial": "partials/elements/progress-bar"
+            },
+            {
+                "title": "Table",
+                "id": "table",
+                "partial": "partials/elements/table"
+            },
+            {
+                "title": "Tag/Label",
+                "id": "tag",
+                "partial": "partials/elements/tag"
+            },
+            {
+                "title": "Toggle",
+                "id": "toggle",
+                "partial": "partials/elements/toggle"
+            }
+        ]
+    },
+    {
+        "section_title": "Components",
+        "menu": [
+            {
+                "title": "Accordion",
+                "id": "accordion",
+                "partial": "partials/components/accordion"
+            },
+            {
+                "title": "Breadcrumbs",
+                "id": "breadcrumbs",
+                "partial": "partials/components/breadcrumbs"
+            },
+            {
+                "title": "Dropdown",
+                "id": "dropdown",
+                "partial": "partials/components/dropdown"
+            },
+            {
+                "title": "Modal",
+                "id": "modal",
+                "partial": "partials/components/modal"
+            },
+            {
+                "title": "Off-canvas",
+                "id": "off-canvas",
+                "partial": "partials/components/off-canvas"
+            },
+            {
+                "title": "Pagination",
+                "id": "pagination",
+                "partial": "partials/components/pagination"
+            },
+            {
+                "title": "Search Box",
+                "id": "search-box",
+                "partial": "partials/components/search-box"
+            },
+            {
+                "title": "Tabs",
+                "id": "tabs",
+                "partial": "partials/components/tabs"
+            },
+            {
+                "title": "Tooltip",
+                "id": "tooltip",
+                "partial": "partials/components/tooltip"
+            }
+        ]
+    },
+    {
+        "section_title": "Forms",
+        "menu": [
+            {
+                "title": "Input",
+                "id": "input",
+                "partial": "partials/forms/input"
+            },
+            {
+                "title": "Textarea",
+                "id": "textarea",
+                "partial": "partials/forms/textarea"
+            },
+            {
+                "title": "Select",
+                "id": "select",
+                "partial": "partials/forms/select"
+            },
+            {
+                "title": "Checkbox",
+                "id": "checkbox",
+                "partial": "partials/forms/checkbox"
+            },
+            {
+                "title": "Radio",
+                "id": "radio",
+                "partial": "partials/forms/radio"
+            },
+            {
+                "title": "File",
+                "id": "file",
+                "partial": "partials/forms/file"
+            }
+        ]
+    }
+]

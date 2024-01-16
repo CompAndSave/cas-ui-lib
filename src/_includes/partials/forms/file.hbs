@@ -1,0 +1,158 @@
+<div class="rounded-md border w-7/12 mt-2" x-data=" {selected: 'preview' }">
+    <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'preview'">Result</button>
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="bg-white self-center" x-show="selected == 'preview'">
+            <div class="group text-center flex flex-col align-center w-full px-10 py-20 border-2 border-dashed rounded-md"
+                id="dropArea" x-data="fileUploader()" :class="isDragging? 'file-active': 'file-inactive' "
+                @dragover.prevent="dragOver" @dragleave.prevent="dragLeave" @drop.prevent="drop">
+                <template x-if="files === null">
+                    <label class="cursor-pointer relative z-10">
+                        <input type="file" class="mx-auto sr-only" id="fileInput" aria-describedby="fileRules"
+                            x-ref="fileUpload" @change="handleFileInput($event.target.files);">
+                        <span
+                            class="before:content-[url('../images/icons/upload.svg')] before:w-10 before:h-10 before:inline-block before:align-text-bottom text-3xl font-display font-extrabold text-md-gray">
+                            Click or drag your file here...
+                        </span>
+                        <hr aria-hidden="true"
+                            class="mt-12 mb-10 border-lt-gray relative z-8 clear-both text-center border-t-2 h-0 box-content overflow-visible after:absolute after:bg-white after:content-['OR'] after:inline-block after:text-center after:py-0 after:px-4 after:box-content after:-top-[14px] after:left-1/2 after:-ml-8 after:text-gray-400 w-1/2 mx-auto group-[.file-active]:after:bg-ice">
+                        <div class="mb-6">
+                            <button class="btn-hollow hover:shadow-none relative z-0" type="button"
+                                @click="$refs.fileUpload.click()">Select a
+                                file</button>
+                        </div>
+                        <span class="block mt-2 italic" id="fileRules">Supported file types are jpg, jpeg, png, and gif.
+                            Maximum
+                            file size is
+                            2MB.</span>
+                    </label>
+                </template>
+                <template x-if="files !== null">
+                    <div class="flex flex-col gap-y-1">
+                        <template x-for="(_,index) in Array.from({ length: files.length })">
+                            <div class="flex flex-col items-center space-x-2">
+                                <template x-if="files[index].type.includes('image/')">
+                                    <img :src="getImageDetail(files[index]).preview" alt="files[index].name"
+                                        class="max-w-80">
+                                </template>
+                                <span class="font-medium text-gray-900" x-text="files[index].name">Uploading</span>
+                                <span class="text-xs self-center text-gray-500"
+                                    x-text="getImageDetail(files[index]).size+' kb'"></span>
+                            </div>
+                        </template>
+                        <div class="mt-6">
+                            <button @click="files = null;" type="button" class="btn-hollow btn-hollow-alert">Remove
+                                file</button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <script>
+                function fileUploader() {
+                    return {
+                        files: null,
+                        isDragging: false,
+                        dragOver() {
+                            this.isDragging = true;
+                        },
+                        dragLeave() {
+                            this.isDragging = false;
+                        },
+                        drop(event) {
+                            this.isDragging = true;
+                            this.handleFiles(event.dataTransfer.files);
+                        },
+                        handleFileInput(files) {
+                            this.handleFiles(files)
+                        },
+                        handleFiles(uploadedFiles) {
+                            this.files = Array.from(uploadedFiles)
+                        },
+                        getImageDetail(file) {
+                            return {
+                                preview: URL.createObjectURL(file),
+                                size: Math.round(file.size / 1024 * 100) / 100
+                            }
+                        }
+                    }
+                }
+            </script>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+            <div class="group text-center flex flex-col align-center w-full px-10 py-20 border-2 border-dashed rounded-md" id="dropArea" x-data="fileUploader()" :class="isDragging? 'file-active': 'file-inactive' "
+            @dragover.prevent="dragOver" @dragleave.prevent="dragLeave" @drop.prevent="drop">
+                <template x-if="files === null">
+                    <label class="cursor-pointer relative z-10">
+                        <input type="file" class="mx-auto sr-only" id="fileInput" aria-describedby="fileRules"
+                            x-ref="fileUpload" @change="handleFileInput($event.target.files);">
+                        <span class="before:content-[url('../images/icons/upload.svg')] before:w-10 before:h-10 before:inline-block before:align-text-bottom text-3xl font-display font-extrabold text-md-gray">Click or drag your file here...</span>
+                        <hr aria-hidden="true"
+                            class="mt-12 mb-10 border-lt-gray relative z-8 clear-both text-center border-t-2 h-0 box-content overflow-visible after:absolute after:bg-white after:content-['OR'] after:inline-block after:text-center after:py-0 after:px-4 after:box-content after:-top-[14px] after:left-1/2 after:-ml-8 after:text-gray-400 w-1/2 mx-auto group-[.file-active]:after:bg-ice">
+                        <div class="mb-6">
+                            <button class="btn-hollow hover:shadow-none relative z-0" type="button" @click="$refs.fileUpload.click()">Select a file</button>
+                        </div>
+                        <span class="block mt-2 italic" id="fileRules">Supported file types are jpg, jpeg, png, and gif. Maximum file size is 2MB.</span>
+                    </label>
+                </template>
+                <template x-if="files !== null">
+                    <div class="flex flex-col gap-y-1">
+                        <template x-for="(_,index) in Array.from({ length: files.length })">
+                            <div class="flex flex-col items-center space-x-2">
+                                <template x-if="files[index].type.includes('image/')">
+                                    <img :src="getImageDetail(files[index]).preview" alt="files[index].name"
+                                        class="max-w-80">
+                                </template>
+                                <span class="font-medium text-gray-900" x-text="files[index].name">Uploading</span>
+                                <span class="text-xs self-center text-gray-500"
+                                    x-text="getImageDetail(files[index]).size+' kb'"></span>
+                            </div>
+                        </template>
+                        <div class="mt-6">
+                            <button @click="files = null;" type="button" class="btn-hollow btn-hollow-alert">Remove file</button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            </script>
+        </div>
+    </div>
+</div>
+
+<div class="mt-6 bg-midnight py-6 px-10">
+    <pre><code class="language-js">
+/** Sample of basic drag and drop file handler **/        
+function fileUploader() {
+    return {
+        files: null,
+        isDragging: false,
+        dragOver() {
+            this.isDragging = true;
+        },
+        dragLeave() {
+            this.isDragging = false;
+        },
+        drop(event) {
+            this.isDragging = true;
+            this.handleFiles(event.dataTransfer.files);
+        },
+        handleFileInput(files) {
+            this.handleFiles(files)
+        },
+        handleFiles(uploadedFiles) {
+            this.files = Array.from(uploadedFiles)
+        },
+        getImageDetail(file) {
+            return {
+                preview: URL.createObjectURL(file),
+                size: Math.round(file.size / 1024 * 100) / 100
+            }
+        }
+    }
+}
+    </code></pre>
+</div>

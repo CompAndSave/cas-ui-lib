@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="title" content="{{title}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Tailwind CompAndSave.com</title>
+    <link rel="stylesheet" type="text/css" media="all" href="css/tailwind.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/cas-icons.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/prism.css" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&amp;family=Work+Sans:wght@500;700&amp;display=swap" />
+    <link rel="shortcut icon" sizes="16x16" href="images/favicon.png">
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body data-container="body">
+    {{{content}}}
+
+
+    <script src="js/prism.js"></script>
+    <script>
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'right-trim': true,
+            'break-lines': 80,
+            'remove-initial-line-feed': true,
+            'tabs-to-spaces': 4,
+            'spaces-to-tabs': 4
+        });
+    </script>
+</body>
+
+</html>

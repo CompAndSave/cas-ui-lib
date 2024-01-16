@@ -1,0 +1,31 @@
+<div class="rounded-md border w-7/12 mt-2" x-data=" {selected: 'preview' }">
+    <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'preview'">Result</button>
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="bg-white" x-show="selected == 'preview'">
+            <div class="py-1">
+                <hr
+                    class="mt-12 mb-10 border-lt-gray relative z-8 clear-both text-center border-t-2 h-0 box-content overflow-visible after:absolute after:bg-white after:content-[url('../images/icons/cmy-swash.svg')] after:inline-block after:h-[36px] after:w-[50px] after:left-1/2 after:-ml-[35px] after:py-0 after:px-4 after:box-content after:-top-[10px]">
+            </div>
+            <div class="py-1">
+                <hr
+                    class="mt-12 mb-10 border-lt-gray relative z-8 clear-both text-center border-t-2 h-0 box-content overflow-visible after:absolute after:bg-white after:content-['OR'] after:inline-block after:h-[36px] after:w-[50px] after:left-1/2 after:-ml-[40px] after:py-0 after:px-4 after:box-content after:-top-[14px]">
+            </div>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+            <!-- DIVIDER WITH IMAGE -->
+            <hr
+                class="mt-12 mb-10 border-lt-gray relative z-8 clear-both text-center border-t-2 h-0 box-content overflow-visible after:absolute after:bg-off-white after:content-[url('../images/icons/cmy-swash.svg')] after:inline-block after:h-[36px] after:w-[50px] after:left-1/2 after:-ml-[35px] after:py-0 after:px-4 after:box-content after:-top-[10px]">
+
+            <!-- DIVIDER WITH TEXT -->
+            <hr
+                class="mt-12 mb-10 border-lt-gray relative z-8 clear-both text-center border-t-2 h-0 box-content overflow-visible after:absolute after:bg-off-white after:content-['OR'] after:inline-block after:h-[36px] after:w-[50px] after:left-1/2 after:-ml-[40px] after:py-0 after:px-4 after:box-content after:-top-[14px]">
+            </script>
+        </div>
+    </div>
+</div>

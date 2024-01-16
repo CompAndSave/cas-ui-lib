@@ -1,0 +1,109 @@
+[
+    {
+        "type": "Header 1",
+        "class": "h1",
+        "font": "Work Sans",
+        "size": {
+            "sm": "1.875rem / 31.875px",
+            "md": "2.25rem / 38.25px"
+        },
+        "colors": [
+            "dk-gray",
+            "white",
+            "primary",
+            "secondary"
+        ]
+    },
+    {
+        "type": "Header 2",
+        "class": "h2",
+        "font": "Work Sans",
+        "size": {
+            "sm": "1.5rem / 25.5px",
+            "md": "1.875rem / 31.875px"
+        },
+        "colors": [
+            "dk-gray",
+            "white",
+            "primary",
+            "secondary"
+        ]
+    },
+    {
+        "type": "Header 3",
+        "class": "h3",
+        "font": "Mulish",
+        "size": {
+            "sm": "1.25rem / 21.25px",
+            "md": "1.5rem / 25.5px"
+        },
+        "colors": [
+            "dk-gray",
+            "white",
+            "primary",
+            "secondary"
+        ]
+    },
+    {
+        "type": "Header 4",
+        "class": "h4",
+        "font": "Mulish",
+        "size": {
+            "sm": "1.125rem / 19.125px",
+            "md": "1.25rem / 21.25px"
+        },
+        "colors": [
+            "dk-gray",
+            "white"
+        ]
+    },
+    {
+        "type": "Header 5",
+        "class": "h5",
+        "font": "Mulish",
+        "size": {
+            "sm": "1rem / 17px",
+            "md": "1.125rem / 19.125px"
+        },
+        "colors": [
+            "dk-gray",
+            "white"
+        ]
+    },
+    {
+        "type": "Body text",
+        "class": "text-base font-normal",
+        "font": "Mulish",
+        "size": {
+            "all": "1rem / 17px"
+        },
+        "colors": [
+            "dk-gray",
+            "white"
+        ]
+    },
+    {
+        "type": "Small text",
+        "class": "text-sm font-normal",
+        "font": "Mulish",
+        "size": {
+            "all": "0.875rem / 14.875px"
+        },
+        "colors": [
+            "dk-gray",
+            "white"
+        ]
+    },
+    {
+        "type": "Tiny text",
+        "class": "text-xs font-normal",
+        "font": "Mulish",
+        "size": {
+            "all": "0.75rem / 12.75px"
+        },
+        "colors": [
+            "dk-gray",
+            "white"
+        ]
+    }
+]

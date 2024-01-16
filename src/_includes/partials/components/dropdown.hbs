@@ -1,0 +1,290 @@
+<div class="flex flex-wrap -mx-4">
+    <div class="w-1/2 px-4">
+        <div class="rounded-md border mt-2" x-data=" {selected: 'preview' }">
+            <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'preview'">Result</button>
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'code'">Code</button>
+            </div>
+            <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+                <div class="bg-white self-center min-h-[200px]" x-show="selected == 'preview'">
+                    <div class="relative inline-block text-left" x-data="{isOpen: false}"
+                        @mouseover.away="isOpen=false">
+                        <div>
+                            <button type="button"
+                                class="group inline-flex w-full justify-center gap-x-1.5  px-5 py-2.5 font-bold "
+                                :class="isOpen? 'bg-ice text-secondary border-t-4 border-secondary shadow-lg shadow-midnight/25' : 'bg-white border-t-4 border-transparent'"
+                                id="vert-menu-button" :aria-expanded="isOpen" aria-haspopup="true"
+                                @click="isOpen = !isOpen" @mouseover="isOpen = true">
+                                Vertical Menu
+                                <svg class="ml-1.5 h-2.5 w-2.5 mt-[8px]" :class="isOpen? 'fill-secondary' : ''"
+                                    viewBox="0 0 128 84" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M64 38.9L28.7 3.5a12 12 0 00-17 0l-8.2 8.2a12 12 0 000 17l52 52a12 12 0 0017 0l52-52a12 12 0 000-17l-8.2-8.2a12 12 0 00-17 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="absolute left-0 z-10 w-56 divide-y divide-lt-gray rounded-b bg-ice shadow-lg shadow-midnight/25 focus:outline-none"
+                            role="menu" aria-orientation="vertical" aria-labelledby="vert-menu-button" tabindex="-1"
+                            x-show="isOpen" :class="isOpen? 'block' : 'hidden'" x-cloak>
+                            <div class="py-2" role="none">
+                                <a href="#" class="text-dk-gray block px-5 py-2.5 border-0" role="menuitem"
+                                    tabindex="-1" id="vert-menu-item-0">Photo Paper &
+                                    More</a>
+                                <a href="#" class="text-dk-gray block px-5 py-2.5 border-0" role="menuitem"
+                                    tabindex="-1" id="vert-menu-item-1">Refill Kit /
+                                    Bulk Ink</a>
+                                <a href="#" class="text-dk-gray block px-5 py-2.5 border-0" role="menuitem"
+                                    tabindex="-1" id="vert-menu-item-1">Cables</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+                    <script type="text/plain" class="language-markup">
+                    <!-- VERTICAL DROP DOWN MENU -->
+                    <div class="relative inline-block text-left" x-data="{isOpen: false}"
+                        @mouseover.away="isOpen=false">
+                        <div>
+                            <button type="button"
+                                class="group inline-flex w-full justify-center gap-x-1.5  px-5 py-2.5 font-bold "
+                                :class="isOpen? 'bg-ice text-secondary border-t-4 border-secondary shadow-lg shadow-midnight/25' : 'bg-white border-t-4 border-transparent'"
+                                id="vert-menu-button" :aria-expanded="isOpen" aria-haspopup="true"
+                                @click="isOpen = !isOpen" @mouseover="isOpen = true">
+                                Vertical Menu
+                                <svg class="ml-1.5 h-2.5 w-2.5 mt-[8px]" :class="isOpen? 'fill-secondary' : ''"
+                                    viewBox="0 0 128 84" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M64 38.9L28.7 3.5a12 12 0 00-17 0l-8.2 8.2a12 12 0 000 17l52 52a12 12 0 0017 0l52-52a12 12 0 000-17l-8.2-8.2a12 12 0 00-17 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="absolute left-0 z-10 w-56 divide-y divide-lt-gray rounded-b bg-ice shadow-lg shadow-midnight/25 focus:outline-none"
+                            role="menu" aria-orientation="vertical" aria-labelledby="vert-menu-button" tabindex="-1"
+                            x-show="isOpen" :class="isOpen? 'block' : 'hidden'" x-cloak>
+                            <div class="py-2" role="none">
+                                <a href="#" class="text-dk-gray block px-5 py-2.5 border-0" role="menuitem"
+                                    tabindex="-1" id="vert-menu-item-0">Photo Paper &
+                                    More</a>
+                                <a href="#" class="text-dk-gray block px-5 py-2.5 border-0" role="menuitem"
+                                    tabindex="-1" id="vert-menu-item-1">Refill Kit /
+                                    Bulk Ink</a>
+                                <a href="#" class="text-dk-gray block px-5 py-2.5 border-0" role="menuitem"
+                                    tabindex="-1" id="vert-menu-item-1">Cables</a>
+                            </div>
+                        </div>
+                    </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="w-1/2 px-4">
+        <div class="rounded-md border mt-2" x-data=" {selected: 'preview' }">
+            <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'preview'">Result</button>
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'code'">Code</button>
+            </div>
+            <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+                <div class="bg-white self-center min-h-[200px]" x-show="selected == 'preview'">
+                    <div class="relative inline-block text-left" x-data="{isOpen: false}"
+                        @mouseover.away="isOpen=false">
+                        <div>
+                            <button type="button"
+                                class="group inline-flex w-full justify-center gap-x-1.5  px-5 py-2.5 font-bold "
+                                :class="isOpen? 'bg-ice text-secondary border-l-4 border-secondary shadow-sm shadow-midnight/25' : 'bg-white border-l-4 border-transparent'"
+                                id="horz-menu-button" :aria-expanded="isOpen" aria-haspopup="true"
+                                @click="isOpen = !isOpen" @mouseover="isOpen = true">
+                                Horizontal Menu
+                                <svg class="ml-2 h-4 w-2.5 mt-[2px]" :class="isOpen? 'fill-secondary' : ''"
+                                    viewBox="0 0 128 84" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M38.9 64L3.5 99.4a12 12 0 000 17l8.2 8.2a12 12 0 0017 0l52-52a12 12 0 000-17l-52-52a12 12 0 00-17 0l-8.2 8.1a12 12 0 000 17z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="absolute left-full top-0 z-10 w-56 divide-y divide-lt-gray rounded-b bg-ice shadow-[2px_1px_2px_0_rgba(32,34,52,0.15),0_1px_2px_-1px_rgba(32,34,52,0.3)] focus:outline-none"
+                            role="menu" aria-orientation="horizontal" aria-labelledby="horz-menu-button" tabindex="-1"
+                            x-show="isOpen" :class="isOpen? 'block' : 'hidden'" x-cloak>
+                            <div class="py-2" role="none">
+                                <a href="#" class="text-dk-gray block px-5 py-2.5 border-0" role="menuitem"
+                                    tabindex="-1" id="horz-menu-item-0">Photo Paper &
+                                    More</a>
+                                <a href="#" class="text-dk-gray block px-5 py-2.5 border-0" role="menuitem"
+                                    tabindex="-1" id="horz-menu-item-1">Refill Kit /
+                                    Bulk Ink</a>
+                                <a href="#" class="text-dk-gray block px-5 py-2.5 border-0" role="menuitem"
+                                    tabindex="-1" id="horz-menu-item-1">Cables</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+                    <script type="text/plain" class="language-markup">
+                    <!-- HORIZONTAL DROP DOWN MENU -->
+                    <div class="relative inline-block text-left" x-data="{isOpen: false}"
+                        @mouseover.away="isOpen=false">
+                        <div>
+                            <button type="button"
+                                class="group inline-flex w-full justify-center gap-x-1.5  px-5 py-2.5 font-bold "
+                                :class="isOpen? 'bg-ice text-secondary border-l-4 border-secondary shadow-sm shadow-midnight/25' : 'bg-white border-l-4 border-transparent'"
+                                id="horz-menu-button" :aria-expanded="isOpen" aria-haspopup="true"
+                                @click="isOpen = !isOpen" @mouseover="isOpen = true">
+                                Horizontal Menu
+                                <svg class="ml-2 h-4 w-2.5 mt-[2px]" :class="isOpen? 'fill-secondary' : ''"
+                                    viewBox="0 0 128 84" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M38.9 64L3.5 99.4a12 12 0 000 17l8.2 8.2a12 12 0 0017 0l52-52a12 12 0 000-17l-52-52a12 12 0 00-17 0l-8.2 8.1a12 12 0 000 17z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="absolute left-full top-0 z-10 w-56 divide-y divide-lt-gray rounded-b bg-ice shadow-[2px_1px_2px_0_rgba(32,34,52,0.15),0_1px_2px_-1px_rgba(32,34,52,0.3)] focus:outline-none"
+                            role="menu" aria-orientation="horizontal" aria-labelledby="horz-menu-button" tabindex="-1"
+                            x-show="isOpen" :class="isOpen? 'block' : 'hidden'" x-cloak>
+                            <div class="py-2" role="none">
+                                <a href="#" class="text-dk-gray block px-5 py-2.5 border-0" role="menuitem"
+                                    tabindex="-1" id="horz-menu-item-0">Photo Paper &
+                                    More</a>
+                                <a href="#" class="text-dk-gray block px-5 py-2.5 border-0" role="menuitem"
+                                    tabindex="-1" id="horz-menu-item-1">Refill Kit /
+                                    Bulk Ink</a>
+                                <a href="#" class="text-dk-gray block px-5 py-2.5 border-0" role="menuitem"
+                                    tabindex="-1" id="horz-menu-item-1">Cables</a>
+                            </div>
+                        </div>
+                    </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full mt-6 px-4">
+        <div class="rounded-md border w-7/12 mt-2" x-data=" {selected: 'preview' }">
+            <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'preview'">Result</button>
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'code'">Code</button>
+            </div>
+            <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+                <div class="bg-white self-center min-h-[100px]" x-show="selected == 'preview'">
+                    <div class="relative inline-block text-left" x-data="{isOpen: false}"
+                        @mouseover.away="isOpen=false">
+                        <div>
+                            <button type="button"
+                                class="group inline-flex w-full justify-center gap-x-1.5  px-5 py-2.5 font-bold "
+                                :class="isOpen? 'bg-ice text-secondary border-t-4 border-secondary shadow-lg shadow-midnight/25' : 'bg-white border-t-4 border-transparent'"
+                                id="mega-menu-button" :aria-expanded="isOpen" aria-haspopup="true"
+                                @click="isOpen = !isOpen" @mouseover="isOpen = true">
+                                Mega Menu
+                                <svg class="ml-1.5 h-2.5 w-2.5 mt-[8px]" :class="isOpen? 'fill-secondary' : ''"
+                                    viewBox="0 0 128 84" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M64 38.9L28.7 3.5a12 12 0 00-17 0l-8.2 8.2a12 12 0 000 17l52 52a12 12 0 0017 0l52-52a12 12 0 000-17l-8.2-8.2a12 12 0 00-17 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="absolute left-1/2 -ml-[400px] z-10 w-[800px] rounded-b bg-ice shadow-lg shadow-midnight/25 focus:outline-none justify-between p-6 gap-4"
+                            :class="isOpen? 'flex' : 'hidden'" role="menu" aria-orientation="vertical"
+                            aria-labelledby="mega-menu-button" tabindex="-1" x-show="isOpen" x-cloak>
+                            <div class="p-2 basis-2/6" role="none">
+                                <img src="images/prototype/img-placeholder.png" alt="" loading="lazy" width="221"
+                                    class="mb-4">
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-0">New Arrivals</a>
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-1">Best Sellers</a>
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-2">Sale</a>
+                            </div>
+                            <div class="p-2 basis-2/6" role="none">
+                                <img src="images/prototype/img-placeholder.png" alt="" loading="lazy" width="221"
+                                    class="mb-4">
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-3">Photo Paper</a>
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-4">Refill Kit /
+                                    Bulk Ink</a>
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-5">Cables</a>
+                            </div>
+                            <div class="p-2 basis-2/6" role="none">
+                                <img src="images/prototype/img-placeholder.png" alt="" loading="lazy" width="221"
+                                    class="mb-4">
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-6">Ink Cartridges</a>
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-7">Toner Cartridges</a>
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-8">Ribbon Cartridges</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+                    <script type="text/plain" class="language-markup">
+                    <!-- MEGA MENU -->
+                    <div class="relative inline-block text-left" x-data="{isOpen: false}"
+                        @mouseover.away="isOpen=false">
+                        <div>
+                            <button type="button"
+                                class="group inline-flex w-full justify-center gap-x-1.5  px-5 py-2.5 font-bold "
+                                :class="isOpen? 'bg-ice text-secondary border-t-4 border-secondary shadow-lg shadow-midnight/25' : 'bg-white border-t-4 border-transparent'"
+                                id="mega-menu-button" :aria-expanded="isOpen" aria-haspopup="true"
+                                @click="isOpen = !isOpen" @mouseover="isOpen = true">
+                                Mega Menu
+                                <svg class="ml-1.5 h-2.5 w-2.5 mt-[8px]" :class="isOpen? 'fill-secondary' : ''"
+                                    viewBox="0 0 128 84" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M64 38.9L28.7 3.5a12 12 0 00-17 0l-8.2 8.2a12 12 0 000 17l52 52a12 12 0 0017 0l52-52a12 12 0 000-17l-8.2-8.2a12 12 0 00-17 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="absolute left-1/2 -ml-[400px] z-10 w-[800px] rounded-b bg-ice shadow-lg shadow-midnight/25 focus:outline-none justify-between p-6 gap-4"
+                            :class="isOpen? 'flex' : 'hidden'" role="menu" aria-orientation="vertical"
+                            aria-labelledby="mega-menu-button" tabindex="-1" x-show="isOpen" x-cloak>
+                            <div class="p-2 basis-2/6" role="none">
+                                <img src="images/prototype/img-placeholder.png" alt="" loading="lazy" width="221"
+                                    class="mb-4">
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-0">New Arrivals</a>
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-1">Best Sellers</a>
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-2">Sale</a>
+                            </div>
+                            <div class="p-2 basis-2/6" role="none">
+                                <img src="images/prototype/img-placeholder.png" alt="" loading="lazy" width="221"
+                                    class="mb-4">
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-3">Photo Paper</a>
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-4">Refill Kit /
+                                    Bulk Ink</a>
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-5">Cables</a>
+                            </div>
+                            <div class="p-2 basis-2/6" role="none">
+                                <img src="images/prototype/img-placeholder.png" alt="" loading="lazy" width="221"
+                                    class="mb-4">
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-6">Ink Cartridges</a>
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-7">Toner Cartridges</a>
+                                <a href="#" class="text-dk-gray block p-2 border-0" role="menuitem" tabindex="-1"
+                                    id="horz-menu-item-8">Ribbon Cartridges</a>
+                            </div>
+                        </div>
+                    </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

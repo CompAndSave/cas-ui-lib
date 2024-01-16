@@ -1,0 +1,52 @@
+<div class="rounded-md border w-7/12 mt-2" x-data=" {selected: 'preview' }">
+    <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'preview'">Result</button>
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="bg-white self-center" x-show="selected == 'preview'">
+            <fieldset class="flex flex-col gap-2">
+                <legend class="block font-bold mb-2">Choose your favorite pets:</legend>
+
+                <div>
+                    <input type="checkbox" id="catCheck" class="peer sr-only">
+                    <label for="catCheck" class="select-none font-semibold checkbox">Cat</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="dogCheck" class="peer sr-only">
+                    <label for="dogCheck" class="select-none font-semibold checkbox">Dog</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="rabbitCheck" class="peer sr-only">
+                    <label for="rabbitCheck" class="select-none font-semibold checkbox">Rabbit</label>
+                </div>
+            </fieldset>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+            <fieldset class="flex flex-col gap-2">
+                <legend class="block font-bold mb-2">Choose your favorite pets:</legend>
+
+                <div>
+                    <input type="checkbox" id="catCheck" class="peer sr-only">
+                    <label for="catCheck" class="select-none font-semibold checkbox">Cat</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="dogCheck" class="peer sr-only">
+                    <label for="dogCheck" class="select-none font-semibold checkbox">Dog</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="rabbitCheck" class="peer sr-only">
+                    <label for="rabbitCheck" class="select-none font-semibold checkbox">Rabbit</label>
+                </div>
+            </fieldset>
+            </script>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="rounded-md border w-7/12 mt-2" x-data=" {selected: 'preview' }">
+    <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'preview'">Result</button>
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="bg-white self-center" x-show="selected == 'preview'">
+            <div class="flex gap-6 flex-wrap">
+                <div class="bg-callout inline-block border border-secondary rounded-md px-6 py-3 pr-10 relative"
+                    x-data="{ showCallout: true }" :class="showCallout? 'opacity-100' : 'opacity-0'"
+                    x-show="showCallout" x-transition:leave="transition-opacity ease-in duration-300">
+                    <span @click="showCallout = false"
+                        class="absolute right-2 top-1 leading-none text-lg text-ui-gray font-bold cursor-pointer hover:text-secondary">x</span>
+                    <span>This is a callout</sp>
+                </div>
+
+                <div
+                    class="bg-callout inline-block border border-secondary rounded-md px-6 py-3 pl-14 relative before:content-[url('../images/icons/info.svg')] before:absolute before:inline-block before:h-[20px] before:w-[20px] before:left-5 before:top-[50%] before:mt-[-10px]">
+                    <span>This is an info callout</span>
+                </div>
+
+                <div
+                    class="bg-callout-error inline-block border border-alert rounded-md px-6 py-3 pl-14 relative before:content-[url('../images/icons/error.svg')] before:absolute before:inline-block before:h-[20px] before:w-[20px] before:left-5 before:top-[50%] before:mt-[-10px]">
+                    <span>This is an alert or error callout</span>
+                </div>
+
+                <div
+                    class="bg-callout-success inline-block border border-success rounded-md px-6 py-3 pl-14 relative mx-4 before:content-[url('../images/icons/success.svg')] before:absolute before:inline-block before:h-[20px] before:w-[20px] before:left-5 before:top-[50%] before:mt-[-10px]">
+                    <span>This is a success callout</span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+            <!-- DEFAULT (with close button) -->
+            <div class="bg-callout inline-block border border-secondary rounded-md px-6 py-3 pr-10 relative"
+                x-data="{ showCallout: true }" :class="showCallout? 'opacity-100' : 'opacity-0'" x-show="showCallout"
+                x-transition:leave="transition-opacity ease-in duration-300">
+                <span @click="showCallout = false"
+                    class="absolute right-2 top-1 leading-none text-lg text-ui-gray font-bold cursor-pointer hover:text-secondary">x</span>
+                <span>This is a callout</sp>
+            </div>
+
+            <!-- INFO -->
+            <div
+                class="bg-callout inline-block border border-secondary rounded-md px-6 py-3 pl-14 relative before:content-[url('../images/icons/info.svg')] before:absolute before:inline-block before:h-[20px] before:w-[20px] before:left-5 before:top-[50%] before:mt-[-10px]">
+                <span>This is an info callout</span>
+            </div>
+
+            <!-- ALERT -->
+            <div
+                class="bg-callout-error inline-block border border-alert rounded-md px-6 py-3 pl-14 relative before:content-[url('../images/icons/error.svg')] before:absolute before:inline-block before:h-[20px] before:w-[20px] before:left-5 before:top-[50%] before:mt-[-10px]">
+                <span>This is an alert or error callout</span>
+            </div>
+
+            <!-- SUCCESS -->
+            <div
+                class="bg-callout-success inline-block border border-success rounded-md px-6 py-3 pl-14 relative mx-4 before:content-[url('../images/icons/success.svg')] before:absolute before:inline-block before:h-[20px] before:w-[20px] before:left-5 before:top-[50%] before:mt-[-10px]">
+                <span>This is a success callout</span>
+            </div>
+            </script>
+        </div>
+    </div>
+</div>

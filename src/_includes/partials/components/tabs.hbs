@@ -1,0 +1,254 @@
+<div class="rounded-md border w-7/12 mt-2" x-data=" {selected: 'preview' }">
+    <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'preview'">Result</button>
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="bg-white self-center" x-show="selected == 'preview'">
+            <div class="rounded-md border" x-data="{selected: 1}">
+                <div role="tablist" class="bg-lt-gray">
+                    <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1"
+                        class="group px-6 py-3 border-t-4"
+                        :class="selected == 1? 'is-active bg-white border-secondary rounded-t-md' : 'border-transparent' "
+                        @click="selected = 1">
+                        <span
+                            class="font-bold text-md-gray group-focus:text-secondary group-[.is-active]:text-secondary">Maria
+                            Ahlefeldt</span>
+                    </button>
+                    <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2"
+                        tabindex="-1" class="group px-6 py-3 border-t-4"
+                        :class="selected == 2? 'is-active bg-white border-secondary rounded-t-md' : 'border-transparent' "
+                        @click="selected = 2">
+                        <span
+                            class="font-bold text-md-gray group-focus:text-secondary group-[.is-active]:text-secondary">Carl
+                            Andersen</span>
+                    </button>
+                    <button id="tab-3" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3"
+                        tabindex="-1" class="group px-6 py-3 border-t-4"
+                        :class="selected == 3? 'is-active bg-white border-secondary rounded-t-md' : 'border-transparent' "
+                        @click="selected = 3">
+                        <span
+                            class="font-bold text-md-gray group-focus:text-secondary group-[.is-active]:text-secondary">Ida
+                            da
+                            Fonseca</span>
+                    </button>
+                    <button id="tab-4" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-4"
+                        tabindex="-1" class="group px-6 py-3 border-t-4"
+                        :class="selected == 4? 'is-active bg-white border-secondary rounded-t-md' : 'border-transparent' "
+                        @click="selected = 4">
+                        <span
+                            class="font-bold text-md-gray group-focus:text-secondary group-[.is-active]:text-secondary">Peter
+                            Müller</span>
+                    </button>
+                </div>
+
+                <div id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" class="p-6" x-cloak
+                    x-show="selected === 1">
+                    <p>
+                        Maria Theresia Ahlefeldt (16 January 1755 – 20 December 1810) was a
+                        Danish, (originally German), composer. She is known as the first female
+                        composer in Denmark. Maria Theresia composed music for several ballets,
+                        operas, and plays of the royal theatre. She was given good critic as a
+                        composer and described as a “<span lang="da">virkelig Tonekunstnerinde</span>”
+                        ('a True Artist of Music').
+                    </p>
+                </div>
+                <div id="tabpanel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="p-6"
+                    x-show="selected === 2" x-cloak>
+                    <p>
+                        Carl Joachim Andersen (29 April 1847 – 7 May 1909) was a Danish flutist,
+                        conductor and composer born in Copenhagen, son of the flutist Christian
+                        Joachim Andersen. Both as a virtuoso and as composer of flute music, he
+                        is considered one of the best of his time. He was considered to be a
+                        tough leader and teacher and demanded as such a lot from his orchestras
+                        but through that style he reached a high level.
+                    </p>
+                </div>
+                <div id="tabpanel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" class="p-6"
+                    x-show="selected === 3" x-cloak>
+                    <p>
+                        Ida Henriette da Fonseca (July 27, 1802 – July 6, 1858) was a Danish
+                        opera singer and composer. Ida Henriette da Fonseca was the daughter of
+                        Abraham da Fonseca (1776–1849) and Marie Sofie Kiærskou (1784–1863). She
+                        and her sister Emilie da Fonseca were students of Giuseppe Siboni, choir
+                        master of the Opera in Copenhagen. She was given a place at the royal
+                        Opera alongside her sister the same year she debuted in 1827.
+                    </p>
+                </div>
+                <div id="tabpanel-4" role="tabpanel" tabindex="0" aria-labelledby="tab-4" class="p-6"
+                    x-show="selected === 4" x-cloak>
+                    <p>
+                        Peter Erasmus Lange-Müller (1 December 1850 – 26 February 1926) was a
+                        Danish composer and pianist. His compositional style was influenced by
+                        Danish folk music and by the work of Robert Schumann; Johannes Brahms;
+                        and his Danish countrymen, including J.P.E. Hartmann.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+            <!-- VERTICAL TABS -->
+            <div class="rounded-md border" x-data="{selected: 1}">
+                <div role="tablist" class="bg-lt-gray">
+                    <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1"
+                        class="group px-6 py-3 border-t-4"
+                        :class="selected == 1? 'is-active bg-white border-secondary rounded-t-md' : 'border-transparent' "
+                        @click="selected = 1">
+                        <span
+                            class="font-bold text-md-gray group-focus:text-secondary group-[.is-active]:text-secondary">TAB
+                            1</span>
+                    </button>
+                    <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2"
+                        tabindex="-1" class="group px-6 py-3 border-t-4"
+                        :class="selected == 2? 'is-active bg-white border-secondary rounded-t-md' : 'border-transparent' "
+                        @click="selected = 2">
+                        <span
+                            class="font-bold text-md-gray group-focus:text-secondary group-[.is-active]:text-secondary">TAB
+                            2</span>
+                    </button>
+                </div>
+
+                <div id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" class="p-6" x-cloak
+                    x-show="selected === 1">
+                    <p>Content here.</p>
+                </div>
+                <div id="tabpanel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="p-6"
+                    x-show="selected === 2" x-cloak>
+                    <p>Content here.</p>
+                </div>
+            </div>
+            </script>
+        </div>
+    </div>
+</div>
+
+
+<div class="rounded-md border w-7/12 mt-8" x-data=" {selected: 'preview' }">
+    <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'preview'">Result</button>
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="bg-white self-center" x-show="selected == 'preview'">
+            <div class="rounded-md border flex" x-data="{selected: 1}">
+                <div role="tablist" class="bg-lt-gray max-w-[125px]">
+                    <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1"
+                        class="group px-6 py-3 border-l-4"
+                        :class="selected == 1? 'is-active bg-white border-secondary rounded-l-md' : 'border-transparent' "
+                        @click="selected = 1">
+                        <span
+                            class="font-bold text-md-gray group-focus:text-secondary group-[.is-active]:text-secondary">Maria
+                            Ahlefeldt</span>
+                    </button>
+                    <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2"
+                        tabindex="-1" class="group px-6 py-3 border-l-4"
+                        :class="selected == 2? 'is-active bg-white border-secondary rounded-l-md' : 'border-transparent' "
+                        @click="selected = 2">
+                        <span
+                            class="font-bold text-md-gray group-focus:text-secondary group-[.is-active]:text-secondary">Carl
+                            Andersen</span>
+                    </button>
+                    <button id="tab-3" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3"
+                        tabindex="-1" class="group px-6 py-3 border-l-4"
+                        :class="selected == 3? 'is-active bg-white border-secondary rounded-l-md' : 'border-transparent' "
+                        @click="selected = 3">
+                        <span
+                            class="font-bold text-md-gray group-focus:text-secondary group-[.is-active]:text-secondary">Ida
+                            da
+                            Fonseca</span>
+                    </button>
+                    <button id="tab-4" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-4"
+                        tabindex="-1" class="group px-6 py-3 border-l-4"
+                        :class="selected == 4? 'is-active bg-white border-secondary rounded-l-md' : 'border-transparent' "
+                        @click="selected = 4">
+                        <span
+                            class="font-bold text-md-gray group-focus:text-secondary group-[.is-active]:text-secondary">Peter
+                            Müller</span>
+                    </button>
+                </div>
+
+                <div id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" class="p-6" x-cloak
+                    x-show="selected === 1">
+                    <p>
+                        Maria Theresia Ahlefeldt (16 January 1755 – 20 December 1810) was a
+                        Danish, (originally German), composer. She is known as the first female
+                        composer in Denmark. Maria Theresia composed music for several ballets,
+                        operas, and plays of the royal theatre. She was given good critic as a
+                        composer and described as a “<span lang="da">virkelig Tonekunstnerinde</span>”
+                        ('a True Artist of Music').
+                    </p>
+                </div>
+                <div id="tabpanel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="p-6"
+                    x-show="selected === 2" x-cloak>
+                    <p>
+                        Carl Joachim Andersen (29 April 1847 – 7 May 1909) was a Danish flutist,
+                        conductor and composer born in Copenhagen, son of the flutist Christian
+                        Joachim Andersen. Both as a virtuoso and as composer of flute music, he
+                        is considered one of the best of his time. He was considered to be a
+                        tough leader and teacher and demanded as such a lot from his orchestras
+                        but through that style he reached a high level.
+                    </p>
+                </div>
+                <div id="tabpanel-3" role="tabpanel" tabindex="0" aria-labelledby="tab-3" class="p-6"
+                    x-show="selected === 3" x-cloak>
+                    <p>
+                        Ida Henriette da Fonseca (July 27, 1802 – July 6, 1858) was a Danish
+                        opera singer and composer. Ida Henriette da Fonseca was the daughter of
+                        Abraham da Fonseca (1776–1849) and Marie Sofie Kiærskou (1784–1863). She
+                        and her sister Emilie da Fonseca were students of Giuseppe Siboni, choir
+                        master of the Opera in Copenhagen. She was given a place at the royal
+                        Opera alongside her sister the same year she debuted in 1827.
+                    </p>
+                </div>
+                <div id="tabpanel-4" role="tabpanel" tabindex="0" aria-labelledby="tab-4" class="p-6"
+                    x-show="selected === 4" x-cloak>
+                    <p>
+                        Peter Erasmus Lange-Müller (1 December 1850 – 26 February 1926) was a
+                        Danish composer and pianist. His compositional style was influenced by
+                        Danish folk music and by the work of Robert Schumann; Johannes Brahms;
+                        and his Danish countrymen, including J.P.E. Hartmann.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+            <!-- HORIZONTAL TABS -->
+            <div class="rounded-md border flex" x-data="{selected: 1}">
+                <div role="tablist" class="bg-lt-gray max-w-[125px]">
+                    <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1"
+                        class="group px-6 py-3 border-l-4"
+                        :class="selected == 1? 'is-active bg-white border-secondary rounded-l-md' : 'border-transparent' "
+                        @click="selected = 1">
+                        <span
+                            class="font-bold text-md-gray group-focus:text-secondary group-[.is-active]:text-secondary">TAB
+                            1</span>
+                    </button>
+                    <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2"
+                        tabindex="-1" class="group px-6 py-3 border-l-4"
+                        :class="selected == 2? 'is-active bg-white border-secondary rounded-l-md' : 'border-transparent' "
+                        @click="selected = 2">
+                        <span
+                            class="font-bold text-md-gray group-focus:text-secondary group-[.is-active]:text-secondary">TAB
+                            2</span>
+                    </button>
+                </div>
+
+                <div id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1" class="p-6" x-cloak
+                    x-show="selected === 1">
+                    <p>Content here.</p>
+                </div>
+                <div id="tabpanel-2" role="tabpanel" tabindex="0" aria-labelledby="tab-2" class="p-6"
+                    x-show="selected === 2" x-cloak>
+                    <p>Content here.</p>
+                </div>
+            </div>
+            </script>
+        </div>
+    </div>
+</div>

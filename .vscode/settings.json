@@ -1,0 +1,33 @@
+{
+    "editor.formatOnSave": true,
+    "prettier.configPath": "",
+    "prettier.documentSelectors": [
+        "**/*.{css,html,hbs}"
+    ],
+    "folder-path-color.folders": [
+        {
+            "path": "pages/cas/_data",
+            "color": "yellow",
+            "symbol": "📈",
+            "tooltip": "Data"
+        },
+        {
+            "path": "presets",
+            "color": "green",
+            "symbol": "⚙️",
+            "tooltip": "Presets"
+        },
+        {
+            "path": "src/_includes/partials",
+            "color": "blue",
+            "symbol": "🗃️",
+            "tooltip": "Partials"
+        },
+        {
+            "path": "src/cas/css",
+            "color": "red",
+            "symbol": "🎨",
+            "tooltip": "CSS"
+        }
+    ],
+}

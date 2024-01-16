@@ -1,0 +1,48 @@
+<div class="rounded-md border w-7/12 mt-2" x-data=" {selected: 'preview' }">
+    <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'preview'">Result</button>
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="bg-white self-center" x-show="selected == 'preview'">
+            <ul class="bg-transparent my-8 h-1.5 rounded-full table mx-auto table-fixed w-full" role="progressbar"
+                aria-label="Current Order Status" aria-valuemin="0" aria-valuemax="3" aria-valuenow="2"
+                aria-valuetext="Order is Shipped">
+                <li class="table-cell pt-4 indent-0 relative text-center before:bg-secondary before:text-white before:h-10 before:leading-none before:w-10 before:block before:absolute before:top-4 before:left-1/2 before:-ml-5 before:-mt-5 before:p-2.5 before:z-10 before:rounded-[50%] before:content-[url('../images/icons/order-history-white.svg')] after:h-2 after:mt-1 after:-translate-y-full after:w-full after:z-0 after:block after:left-1/2 after:absolute after:top-4 after:bg-secondary after:content['']"
+                    data-step="processing">
+                    <span class="block mt-6 align-top text-sm">Processing</span>
+                </li>
+                <li class="table-cell pt-4 indent-0 relative text-center before:bg-secondary before:text-white before:h-10 before:leading-none before:w-10 before:block before:absolute before:top-4 before:left-1/2 before:-ml-5 before:-mt-5 before:p-2.5 before:z-10 before:rounded-[50%] before:content-[url('../images/icons/truck-white.svg')] after:h-2 after:mt-1 after:-translate-y-full after:w-full after:z-0 after:block after:left-1/2 after:absolute after:top-4 after:bg-lt-gray after:content['']"
+                    data-step="shipped" aria-current="true">
+                    <span class="block mt-6 align-top text-sm">Shipped<span>
+                </li>
+                <li class="table-cell pt-4 indent-0 relative text-center before:bg-lt-gray before:h-5 before:leading-none before:w-5 before:block before:absolute before:top-4 before:left-1/2 before:-ml-2.5 before:-mt-2.5 before:z-10 before:rounded-[50%]"
+                    data-step="delivered">
+                    <span class="block mt-6 align-top text-sm">Delivered</span>
+                </li>
+            </ul>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+            <ul class="bg-transparent h-1.5 rounded-full table mx-auto table-fixed w-full" role="progressbar"
+                aria-label="Current Order Status" aria-valuemin="0" aria-valuemax="3" aria-valuenow="2"
+                aria-valuetext="Order is Shipped">
+                <li class="table-cell pt-4 indent-0 relative text-center before:bg-secondary before:text-white before:h-10 before:leading-none before:w-10 before:block before:absolute before:top-4 before:left-1/2 before:-ml-5 before:-mt-5 before:p-2.5 before:z-10 before:rounded-[50%] before:content-[url('../images/icons/order-history-white.svg')] after:h-2 after:mt-1 after:-translate-y-full after:w-full after:z-0 after:block after:left-1/2 after:absolute after:top-4 after:bg-secondary after:content['']"
+                    data-step="processing">
+                    <span class="block mt-6 align-top text-sm">Processing</span>
+                </li>
+                <li class="table-cell pt-4 indent-0 relative text-center before:bg-secondary before:text-white before:h-10 before:leading-none before:w-10 before:block before:absolute before:top-4 before:left-1/2 before:-ml-5 before:-mt-5 before:p-2.5 before:z-10 before:rounded-[50%] before:content-[url('../images/icons/truck-white.svg')] after:h-2 after:mt-1 after:-translate-y-full after:w-full after:z-0 after:block after:left-1/2 after:absolute after:top-4 after:bg-lt-gray after:content['']"
+                    data-step="shipped" aria-current="true">
+                    <span class="block mt-6 align-top text-sm">Shipped<span>
+                </li>
+                <li class="table-cell pt-4 indent-0 relative text-center before:bg-lt-gray before:h-5 before:leading-none before:w-5 before:block before:absolute before:top-4 before:left-1/2 before:-ml-2.5 before:-mt-2.5 before:z-10 before:rounded-[50%]"
+                    data-step="delivered">
+                    <span class="block mt-6 align-top text-sm">Delivered</span>
+                </li>
+            </ul>
+            </script>
+        </div>
+    </div>
+</div>

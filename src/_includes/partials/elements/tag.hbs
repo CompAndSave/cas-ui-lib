@@ -1,0 +1,37 @@
+<div class="rounded-md border w-7/12 mt-2" x-data=" {selected: 'preview' }">
+    <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'preview'">Result</button>
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="bg-white self-center" x-show="selected == 'preview'">
+            <div class="flex gap-4 p-4 flex-wrap">
+                <span
+                    class="uppercase bg-secondary rounded-md text-white font-bold px-2 text-sm leading-loose tracking-wide">SALE</span>
+                <span
+                    class="uppercase bg-magenta rounded-md text-white font-bold px-2 leading-loose text-sm tracking-wide">EXCLUSIVE</span>
+                <span
+                    class="uppercase bg-primary rounded-md text-white font-bold px-2 leading-loose text-sm tracking-wide">PROCESSING</span>
+                <span
+                    class="uppercase bg-green rounded-md text-white font-bold px-2 leading-loose text-sm tracking-wide">COMPLETED</span>
+                <span
+                    class="uppercase bg-dk-yellow rounded-md text-dk-gray font-bold px-2 leading-loose text-sm tracking-wide">PENDING</span>
+            </div>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+                <span class="uppercase bg-secondary rounded-md text-white font-bold px-2 text-sm leading-loose tracking-wide">SALE</span>
+
+                <span class="uppercase bg-magenta rounded-md text-white font-bold px-2 leading-loose text-sm tracking-wide">EXCLUSIVE</span>
+
+                <span class="uppercase bg-primary rounded-md text-white font-bold px-2 leading-loose text-sm tracking-wide">PROCESSING</span>
+
+                <span class="uppercase bg-green rounded-md text-white font-bold px-2 leading-loose text-sm tracking-wide">COMPLETED</span>
+
+                <span class="uppercase bg-dk-yellow rounded-md text-dk-gray font-bold px-2 leading-loose text-sm tracking-wide">PENDING</span>
+            </script>
+        </div>
+    </div>
+</div>

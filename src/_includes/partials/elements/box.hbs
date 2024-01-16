@@ -1,0 +1,75 @@
+<div class="rounded-md border w-7/12 mt-2" x-data=" {selected: 'preview' }">
+    <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'preview'">Result</button>
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col p-4 rounded-b-md  items-center" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="bg-white" x-show="selected == 'preview'">
+            <div class="flex gap-10">
+                <div>
+                    <div
+                        class="flex flex-col border bg-white shadow-lg rounded-md overflow-hidden justify-center max-w-80">
+                        <div class="p-4 md:p-6">
+                            <img src="images/prototype/img-placeholder.png" class="inline-block w-full">
+                            <h3 class="font-display mt-4">Heading</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <div class="flex mt-6">
+                                <button class="btn">YES</button>
+                                <button class="btn-flat mx-2">NO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div
+                        class="flex flex-row border bg-white shadow-lg rounded-md overflow-hidden justify-center items-center">
+                        <div class="p-4 md:p-6 pr-0 max-w-80 lg:max-w-60">
+                            <img src="images/prototype/img-placeholder.png" class="block w-fit">
+                        </div>
+                        <div class="p-4 md:p-6">
+                            <h3 class="font-display mt-4">Heading</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <div class="flex mt-6">
+                                <button class="btn mx-2 px-6">YES</button>
+                                <button class="btn-flat mx-2">NO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+            <!-- VERTICAL -->
+            <div class="flex flex-col border bg-white shadow-lg rounded-md overflow-hidden justify-center max-w-80">
+                <div class="p-4 md:p-6">
+                    <img src="images/prototype/img-placeholder.png" class="inline-block w-full">
+                    <h3 class="font-display mt-4">Heading</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <div class="flex mt-6">
+                        <button class="btn">YES</button>
+                        <button class="btn-flat mx-2">NO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HORIZONTAL -->
+            <div class="flex flex-row border bg-white shadow-lg rounded-md overflow-hidden justify-center items-center">
+                <div class="p-4 md:p-6 pr-0 max-w-80 lg:max-w-60">
+                    <img src="images/prototype/img-placeholder.png" class="block w-fit">
+                </div>
+                <div class="p-4 md:p-6">
+                    <h3 class="font-display mt-4">Heading</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <div class="flex mt-6">
+                        <button class="btn mx-2 px-6">YES</button>
+                        <button class="btn-flat mx-2">NO</button>
+                    </div>
+                </div>
+            </div>
+            </script>
+        </div>
+    </div>
+</div>

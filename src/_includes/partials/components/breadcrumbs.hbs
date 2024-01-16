@@ -1,0 +1,66 @@
+<div class="rounded-md border w-7/12 mt-2" x-data=" {selected: 'preview' }">
+    <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'preview'">Result</button>
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="bg-white self-center" x-show="selected == 'preview'">
+            <ul class="border-b overflow-hidden pb-1 text-ellipsis whitespace-nowrap w-full" itemscope=""
+                itemtype="https://schema.org/BreadcrumbList">
+                <li class="relative inline ml-1.5 before:inline-block before:h-3 before:mr-1.5 before:align-baseline before:w-3 before:content-[url('../images/icons/home.svg')] after:content-['\203A'] after:relative after:text-ui-gray after:text-[24px] after:font-extrabold after:leading-none after:top-0.5  after:ml-2.5 after:mr-2"
+                    itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="#"
+                        class="relative text-dk-gray border-0 pb-0 after:bg-secondary after:w-0 after:-bottom-1.5 after:content[''] after:inline-block after:h-[2px] after:left-0 after:absolute after:transition-width after:duration-200 after:ease-linear hover:after:w-full hover:text-dk-gray hover:border-0"><span
+                            itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li class="relative inline ml-1.5 after:content-['\203A'] after:relative after:text-ui-gray after:text-[24px] after:font-extrabold after:leading-none after:top-0.5  after:ml-2.5 after:mr-2"
+                    itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="#"
+                        class="relative text-dk-gray border-0 pb-0 after:bg-secondary after:w-0 after:-bottom-1.5 after:content[''] after:inline-block after:h-[2px] after:left-0 after:absolute after:transition-width after:duration-200 after:ease-linear hover:after:w-full hover:text-dk-gray hover:border-0"><span
+                            itemprop="name">Accessories</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li class="relative inline ml-1.5" itemprop="itemListElement" itemscope=""
+                    itemtype="https://schema.org/ListItem">
+                    <span class="sr-only">Current: </span>
+                    <span itemprop="name"
+                        class="font-bold relative text-dk-gray border-0 pb-0 after:bg-secondary after:w-full after:-bottom-1.5 after:content[''] after:inline-block after:h-[2px] after:left-0 after:absolute">Photo
+                        Paper</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ul>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+            <ul class="border-b overflow-hidden pb-1 text-ellipsis whitespace-nowrap w-full" itemscope=""
+        itemtype="https://schema.org/BreadcrumbList">
+                <li class="relative inline ml-1.5 before:inline-block before:h-3 before:mr-1.5 before:align-baseline before:w-3 before:content-[url('../images/icons/home.svg')] after:content-['\203A'] after:relative after:text-ui-gray after:text-[24px] after:font-extrabold after:leading-none after:top-0.5  after:ml-2.5 after:mr-2"
+                    itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="#"
+                        class="relative text-dk-gray border-0 pb-0 after:bg-secondary after:w-0 after:-bottom-1.5 after:content[''] after:inline-block after:h-[2px] after:left-0 after:absolute after:transition-width after:duration-200 after:ease-linear hover:after:w-full hover:text-dk-gray hover:border-0"><span
+                            itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li class="relative inline ml-1.5 after:content-['\203A'] after:relative after:text-ui-gray after:text-[24px] after:font-extrabold after:leading-none after:top-0.5  after:ml-2.5 after:mr-2"
+                    itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="#"
+                        class="relative text-dk-gray border-0 pb-0 after:bg-secondary after:w-0 after:-bottom-1.5 after:content[''] after:inline-block after:h-[2px] after:left-0 after:absolute after:transition-width after:duration-200 after:ease-linear hover:after:w-full hover:text-dk-gray hover:border-0"><span
+                            itemprop="name">Accessories</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li class="relative inline ml-1.5" itemprop="itemListElement" itemscope=""
+                    itemtype="https://schema.org/ListItem">
+                    <span class="sr-only">Current: </span>
+                    <span itemprop="name"
+                        class="font-bold relative text-dk-gray border-0 pb-0 after:bg-secondary after:w-full after:-bottom-1.5 after:content[''] after:inline-block after:h-[2px] after:left-0 after:absolute">Photo
+                        Paper</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ul>
+            </script>
+        </div>
+    </div>
+</div>

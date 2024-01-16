@@ -1,0 +1,226 @@
+@layer components {
+  :root {
+    --base-shadow-color: rgba(32, 34, 52, 0.35);
+  }
+  /** SOLID **/
+  .btn {
+    @apply inline-block items-center rounded-full bg-primary px-6 py-2.5 text-center font-bold leading-none text-white transition duration-300 ease-out md:px-9 md:py-3;
+    box-shadow:
+      1px 1px 1px 0 var(--base-shadow-color),
+      inset -10rem 0 0 0 theme(colors.primary.DEFAULT);
+    &:hover {
+      box-shadow:
+        1px 1px 1px 0 var(--base-shadow-color),
+        inset 0 0 0 theme(colors.md-gray);
+    }
+    &:hover {
+      box-shadow:
+        1px 1px 1px 0 var(--base-shadow-color),
+        inset 0 0 0 theme(colors.primary.darker);
+    }
+    &:focus {
+      box-shadow:
+        0 0 0 2px theme(colors.white),
+        0 0 4px 4px theme(colors.primary.darker);
+    }
+    &:active {
+      @apply outline-none;
+      box-shadow: inset 0 1px 5px 0 var(--base-shadow-color);
+    }
+    &-secondary,
+    &-cyan {
+      @apply bg-secondary text-white;
+      box-shadow:
+        1px 1px 1px 0 var(--base-shadow-color),
+        inset -10rem 0 0 0 theme(colors.secondary.DEFAULT);
+      &:hover {
+        box-shadow:
+          1px 1px 1px 0 var(--base-shadow-color),
+          inset 0 0 0 theme(colors.secondary.darker);
+      }
+      &:focus {
+        box-shadow:
+          0 0 0 2px theme(colors.white),
+          0 0 4px 4px theme(colors.secondary.darker);
+      }
+    }
+    &-magenta {
+      @apply bg-magenta text-white;
+      box-shadow:
+        1px 1px 1px 0 var(--base-shadow-color),
+        inset -10rem 0 0 0 theme(colors.magenta.DEFAULT);
+      &:hover {
+        box-shadow:
+          1px 1px 1px 0 var(--base-shadow-color),
+          inset 0 0 0 theme(colors.magenta.darker);
+      }
+      &:focus {
+        box-shadow:
+          0 0 0 2px theme(colors.white),
+          0 0 4px 4px theme(colors.magenta.darker);
+      }
+    }
+    &-green {
+      @apply bg-green text-white;
+      box-shadow:
+        1px 1px 1px 0 var(--base-shadow-color),
+        inset -10rem 0 0 0 theme(colors.green.DEFAULT);
+      &:hover {
+        box-shadow:
+          1px 1px 1px 0 var(--base-shadow-color),
+          inset 0 0 0 theme(colors.green.darker);
+      }
+      &:focus {
+        box-shadow:
+          0 0 0 2px theme(colors.white),
+          0 0 4px 4px theme(colors.green.darker);
+      }
+    }
+    &-dk-yellow {
+      @apply bg-dk-yellow text-dk-gray;
+      box-shadow:
+        1px 1px 1px 0 var(--base-shadow-color),
+        inset -10rem 0 0 0 theme(colors.dk-yellow.DEFAULT);
+      &:hover {
+        box-shadow:
+          1px 1px 1px 0 var(--base-shadow-color),
+          inset 0 0 0 theme(colors.dk-yellow.darker);
+      }
+      &:focus {
+        box-shadow:
+          0 0 0 2px theme(colors.white),
+          0 0 4px 4px theme(colors.dk-yellow.darker);
+      }
+    }
+    &-lt-yellow {
+      @apply bg-lt-yellow text-dk-gray;
+      box-shadow:
+        1px 1px 1px 0 var(--base-shadow-color),
+        inset -10rem 0 0 0 theme(colors.lt-yellow.DEFAULT);
+      &:hover {
+        box-shadow:
+          1px 1px 1px 0 var(--base-shadow-color),
+          inset 0 0 0 theme(colors.lt-yellow.darker);
+      }
+      &:focus {
+        box-shadow:
+          0 0 0 2px theme(colors.white),
+          0 0 4px 4px theme(colors.lt-yellow.darker);
+      }
+    }
+    &:disabled,
+    &.disabled {
+      @apply cursor-not-allowed bg-lt-gray text-md-gray shadow-none;
+    }
+  }
+
+  /** HOLLOW **/
+  .btn-hollow {
+    @apply inline-block items-center rounded-full border border-primary-hl bg-transparent px-6 py-2.5 text-center font-bold leading-none text-primary transition duration-300 ease-out md:px-9 md:py-3;
+    box-shadow: inset -10rem 0 0 0 transparent;
+    &:hover,
+    &:active,
+    &:focus {
+      @apply border-primary-hl bg-primary-hl-bg;
+      box-shadow: inset 0 0 0 0 theme(colors.white);
+    }
+    &.dk-bg {
+      &:hover,
+      &:active,
+      &:focus {
+        box-shadow: inset 0 0 0 0 theme(colors.midnight);
+      }
+    }
+    &.lt-bg {
+      &:hover,
+      &:active,
+      &:focus {
+        box-shadow: inset 0 0 0 0 theme(colors.ice);
+      }
+    }
+    &-secondary {
+      @apply border-secondary-hl text-secondary;
+      &:hover,
+      &:active,
+      &:focus {
+        @apply border-secondary-hl bg-secondary-hl-bg;
+      }
+    }
+    &-alert {
+      @apply border-orange-hl text-orange;
+      &:hover,
+      &:active,
+      &:focus {
+        @apply border-orange-hl bg-orange-hl-bg;
+      }
+    }
+    &-magenta {
+      @apply border-magenta-hl text-magenta;
+      &:hover,
+      &:active,
+      &:focus {
+        @apply border-magenta-hl bg-magenta-hl-bg;
+      }
+    }
+    &-dk-yellow {
+      @apply border-dk-yellow-hl text-dk-yellow;
+      &:hover,
+      &:active,
+      &:focus {
+        @apply border-dk-yellow-hl bg-dk-yellow-hl-bg;
+      }
+    }
+    &-lt-yellow {
+      @apply border-lt-yellow-hl text-lt-yellow;
+      &:hover,
+      &:active,
+      &:focus {
+        @apply border-lt-yellow-hl bg-lt-yellow-hl-bg;
+      }
+    }
+    &-green {
+      @apply border-green-hl text-green;
+      &:hover,
+      &:active,
+      &:focus {
+        @apply border-green-hl bg-green-hl-bg;
+      }
+    }
+    &-md-gray {
+      @apply border-md-gray text-md-gray;
+      &:hover,
+      &:active,
+      &:focus {
+        @apply border-md-gray bg-lt-gray;
+      }
+    }
+    &-ui-gray {
+      @apply border-ui-gray text-md-gray;
+      &:hover,
+      &:active,
+      &:focus {
+        @apply border-ui-gray bg-lt-gray;
+      }
+    }
+    &-ui-lt-gray {
+      @apply border-ui-gray text-ui-lt-gray;
+      &:hover,
+      &:active,
+      &:focus {
+        @apply border-ui-gray bg-lt-gray;
+      }
+      &.dk-bg {
+        &:hover,
+        &:active,
+        &:focus {
+          @apply bg-black;
+        }
+      }
+    }
+  }
+
+  /** FLAT **/
+  .btn-flat {
+    @apply rounded-full px-6 py-2.5 leading-none text-md-gray hover:bg-lt-gray;
+  }
+}

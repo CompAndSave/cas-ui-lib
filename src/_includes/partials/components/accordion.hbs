@@ -1,0 +1,264 @@
+<div class="mt-2 flex flex-wrap -mx-4">
+    <div class="w-1/2 px-4">
+        <div class="rounded-md border" x-data=" {selected: 'preview' }">
+            <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'preview'">Result</button>
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'code'">Code</button>
+            </div>
+            <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+                <div class="bg-white self-center" x-show="selected == 'preview'">
+                    <h3 class="sub-title">Smooth Accordion</h3>
+                    <div class="mt-4" x-data="{panel: null}">
+                        <div class="border-b">
+                            <button type="button"
+                                class="block w-full relative py-3 border-0 text-dk-gray font-bold after:h-3 after:w-3 after:inline-block after:absolute after:right-5 after:top-2.5 focus:text-secondary focus:after:grayscale-0 text-left"
+                                :class="panel == 1? 'text-secondary after:content-[url(../images/icons/arrow-up-cyan.svg)]' : 'after:content-[url(../images/icons/arrow-down-cyan.svg)] after:grayscale hover:after:grayscale-0'"
+                                @click="panel !== 1 ? panel = 1 : panel = null">
+                                Accordion Title
+                            </button>
+
+                            <div class="overflow-hidden transition-all max-h-0 duration-700" style=""
+                                x-ref="smoothPanel1"
+                                x-bind:style="panel == 1 ? 'max-height: ' + $refs.smoothPanel1.scrollHeight + 'px' : ''">
+                                <div class="pb-3">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                    tempor
+                                    incididunt ut
+                                    labore
+                                    et dolore magna aliqua. Magna fringilla urna porttitor rhoncus dolor purus
+                                    non
+                                    enim
+                                    praesent.
+                                    Cras
+                                    pulvinar mattis nunc sed. Ac feugiat sed lectus vestibulum mattis
+                                    ullamcorper
+                                    velit
+                                    sed
+                                    ullamcorper.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-b">
+                            <button type="button"
+                                class="block w-full relative py-3 border-0 text-dk-gray font-bold after:h-3 after:w-3 after:inline-block after:absolute after:right-5 after:top-2.5 focus:text-secondary focus:after:grayscale-0 text-left"
+                                :class="panel == 2? 'text-secondary after:content-[url(../images/icons/arrow-up-cyan.svg)]' : 'after:content-[url(../images/icons/arrow-down-cyan.svg)] after:grayscale hover:after:grayscale-0'"
+                                @click="panel !== 2 ? panel = 2 : panel = null">
+                                Accordion Title
+                            </button>
+
+                            <div class="overflow-hidden transition-all max-h-0 duration-700" style=""
+                                x-ref="smoothPanel2"
+                                x-bind:style="panel == 2 ? 'max-height: ' + $refs.smoothPanel2.scrollHeight + 'px' : ''">
+                                <div class="pb-3">
+                                    Pharetra magna ac placerat vestibulum lectus. Consectetur adipiscing elit ut
+                                    aliquam
+                                    purus sit
+                                    amet.
+                                    Diam donec adipiscing tristique risus nec feugiat in. Curabitur vitae nunc
+                                    sed
+                                    velit. Nunc
+                                    scelerisque viverra mauris in aliquam. Mattis molestie a iaculis at.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="button"
+                                class="block w-full relative py-3 border-0 text-dk-gray font-bold after:h-3 after:w-3 after:inline-block after:absolute after:right-5 after:top-2.5 focus:text-secondary focus:after:grayscale-0 text-left"
+                                :class="panel == 3? 'text-secondary after:content-[url(../images/icons/arrow-up-cyan.svg)]' : 'after:content-[url(../images/icons/arrow-down-cyan.svg)] after:grayscale hover:after:grayscale-0'"
+                                @click="panel !== 3 ? panel = 3 : panel = null">
+                                Accordion Title
+                            </button>
+
+                            <div class="overflow-hidden transition-all max-h-0 duration-700" style=""
+                                x-ref="smoothPanel3"
+                                x-bind:style="panel == 3 ? 'max-height: ' + $refs.smoothPanel3.scrollHeight + 'px' : ''">
+                                <div class="pb-3">
+                                    Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Nunc eget
+                                    lorem
+                                    dolor
+                                    sed viverra
+                                    ipsum. Luctus accumsan tortor posuere ac ut consequat semper viverra nam.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+                    <script type="text/plain" class="language-markup">
+            <!-- SINGLE-EXPAND -->
+                    <div class="mt-4" x-data="{panel: null}">
+                        <div class="border-b">
+                            <button type="button"
+                                class="block w-full relative py-3 border-0 text-dk-gray font-bold after:h-3 after:w-3 after:inline-block after:absolute after:right-5 after:top-2.5 focus:text-secondary focus:after:grayscale-0 text-left"
+                                :class="panel == 1? 'text-secondary after:content-[url(../images/icons/arrow-up-cyan.svg)]' : 'after:content-[url(../images/icons/arrow-down-cyan.svg)] after:grayscale hover:after:grayscale-0'"
+                                @click="panel !== 1 ? panel = 1 : panel = null">
+                                Accordion Title
+                            </button>
+
+                            <div class="overflow-hidden transition-all max-h-0 duration-700" style=""
+                                x-ref="smoothPanel1"
+                                x-bind:style="panel == 1 ? 'max-height: ' + $refs.smoothPanel1.scrollHeight + 'px' : ''">
+                                <div class="pb-3">
+                                    Content Here
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-b">
+                            <button type="button"
+                                class="block w-full relative py-3 border-0 text-dk-gray font-bold after:h-3 after:w-3 after:inline-block after:absolute after:right-5 after:top-2.5 focus:text-secondary focus:after:grayscale-0 text-left"
+                                :class="panel == 2? 'text-secondary after:content-[url(../images/icons/arrow-up-cyan.svg)]' : 'after:content-[url(../images/icons/arrow-down-cyan.svg)] after:grayscale hover:after:grayscale-0'"
+                                @click="panel !== 2 ? panel = 2 : panel = null">
+                                Accordion Title
+                            </button>
+
+                            <div class="overflow-hidden transition-all max-h-0 duration-700" style=""
+                                x-ref="smoothPanel2"
+                                x-bind:style="panel == 2 ? 'max-height: ' + $refs.smoothPanel2.scrollHeight + 'px' : ''">
+                                <div class="pb-3">
+                                    Content Here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="w-1/2 px-4">
+        <div class="rounded-md border" x-data=" {selected: 'preview' }">
+            <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'preview'">Result</button>
+                <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+                    @click="selected = 'code'">Code</button>
+            </div>
+            <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+                <div class="bg-white self-center" x-show="selected == 'preview'">
+                    <h3 class="sub-title">Collapsed Accordion</h3>
+                    <div class="mt-4">
+                        <div class="border-b" x-data="{isOpen:false}">
+                            <button type="button"
+                                class="block w-full relative py-3 border-0 text-dk-gray font-bold after:h-3 after:w-3 after:inline-block after:absolute after:right-5 after:top-2.5 focus:text-secondary focus:after:grayscale-0 text-left"
+                                :class="isOpen? 'text-secondary after:content-[url(../images/icons/arrow-up-cyan.svg)]' : 'after:content-[url(../images/icons/arrow-down-cyan.svg)] after:grayscale hover:after:grayscale-0'"
+                                @click="isOpen = !isOpen">
+                                Accordion Title
+                            </button>
+
+                            <div class="overflow-hidden transition-all max-h-0 duration-700" style=""
+                                x-ref="collapsePanel1"
+                                x-bind:style="isOpen ? 'max-height: ' + $refs.collapsePanel1.scrollHeight + 'px' : ''">
+                                <div class="pb-3">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                    tempor
+                                    incididunt ut
+                                    labore
+                                    et dolore magna aliqua. Magna fringilla urna porttitor rhoncus dolor purus
+                                    non
+                                    enim
+                                    praesent.
+                                    Cras
+                                    pulvinar mattis nunc sed. Ac feugiat sed lectus vestibulum mattis
+                                    ullamcorper
+                                    velit
+                                    sed
+                                    ullamcorper.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-b" x-data="{isOpen:false}">
+                            <button type="button"
+                                class="block w-full relative py-3 border-0 text-dk-gray font-bold after:h-3 after:w-3 after:inline-block after:absolute after:right-5 after:top-2.5 focus:text-secondary focus:after:grayscale-0 text-left"
+                                :class="isOpen? 'text-secondary after:content-[url(../images/icons/arrow-up-cyan.svg)]' : 'after:content-[url(../images/icons/arrow-down-cyan.svg)] after:grayscale hover:after:grayscale-0'"
+                                @click="isOpen = !isOpen">
+                                Accordion Title
+                            </button>
+
+                            <div class="overflow-hidden transition-all max-h-0 duration-700" style=""
+                                x-ref="collapsePanel2"
+                                x-bind:style="isOpen? 'max-height: ' + $refs.collapsePanel2.scrollHeight + 'px' : ''">
+                                <div class="pb-3">
+                                    Pharetra magna ac placerat vestibulum lectus. Consectetur adipiscing elit ut
+                                    aliquam
+                                    purus sit
+                                    amet.
+                                    Diam donec adipiscing tristique risus nec feugiat in. Curabitur vitae nunc
+                                    sed
+                                    velit. Nunc
+                                    scelerisque viverra mauris in aliquam. Mattis molestie a iaculis at.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div x-data="{isOpen:false}">
+                            <button type="button"
+                                class="block w-full relative py-3 border-0 text-dk-gray font-bold after:h-3 after:w-3 after:inline-block after:absolute after:right-5 after:top-2.5 focus:text-secondary focus:after:grayscale-0 text-left"
+                                :class="isOpen? 'text-secondary after:content-[url(../images/icons/arrow-up-cyan.svg)]' : 'after:content-[url(../images/icons/arrow-down-cyan.svg)] after:grayscale hover:after:grayscale-0'"
+                                @click="isOpen = !isOpen">
+                                Accordion Title
+                            </button>
+
+                            <div class="overflow-hidden transition-all max-h-0 duration-700" style=""
+                                x-ref="collapsePanel3"
+                                x-bind:style="isOpen? 'max-height: ' + $refs.collapsePanel3.scrollHeight + 'px' : ''">
+                                <div class="pb-3">
+                                    Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Nunc eget
+                                    lorem
+                                    dolor
+                                    sed viverra
+                                    ipsum. Luctus accumsan tortor posuere ac ut consequat semper viverra nam.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+                    <script type="text/plain" class="language-markup">
+                    <!-- MULTI-EXPAND | ALL CLOSED -->
+                    <div class="border-b" x-data="{isOpen:false}">
+                        <button type="button"
+                            class="block w-full relative py-3 border-0 text-dk-gray font-bold after:h-3 after:w-3 after:inline-block after:absolute after:right-5 after:top-2.5 focus:text-secondary focus:after:grayscale-0 text-left"
+                            :class="isOpen? 'text-secondary after:content-[url(../images/icons/arrow-up-cyan.svg)]' : 'after:content-[url(../images/icons/arrow-down-cyan.svg)] after:grayscale hover:after:grayscale-0'"
+                            @click="isOpen = !isOpen">
+                            Accordion Title
+                        </button>
+
+                        <div class="overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="collapsePanel1"
+                            x-bind:style="isOpen ? 'max-height: ' + $refs.collapsePanel1.scrollHeight + 'px' : ''">
+                            <div class="pb-3">
+                                Content Here
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-b" x-data="{isOpen:false}">
+                        <button type="button"
+                            class="block w-full relative py-3 border-0 text-dk-gray font-bold after:h-3 after:w-3 after:inline-block after:absolute after:right-5 after:top-2.5 focus:text-secondary focus:after:grayscale-0 text-left"
+                            :class="isOpen? 'text-secondary after:content-[url(../images/icons/arrow-up-cyan.svg)]' : 'after:content-[url(../images/icons/arrow-down-cyan.svg)] after:grayscale hover:after:grayscale-0'"
+                            @click="isOpen = !isOpen">
+                            Accordion Title
+                        </button>
+
+                        <div class="overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="collapsePanel2"
+                            x-bind:style="isOpen? 'max-height: ' + $refs.collapsePanel2.scrollHeight + 'px' : ''">
+                            <div class="pb-3">
+                                Content Here
+                            </div>
+                        </div>
+                    </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="mt-6">
+
+</div>
+
+<div class="rounded-md border w-7/12 mt-2" x-data=" {selected: 'preview' }">
+    <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'preview'">Result</button>
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="bg-white self-center py-6" x-show="selected == 'preview'">
+            <div class="group relative">
+                <div class="h-4 w-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="fill-ui-gray">
+                        <path data-name="info"
+                            d="M64 0a64 64 0 1064 64A64 64 0 0064 0zm10 104H54V54h20zm-1.36-64.32q-2.59 2.09-8.64 2.09t-8.64-2.08c-1.72-1.39-2.58-3.64-2.58-6.75s.86-5.46 2.58-6.85S60 24 64 24s6.91.69 8.64 2.08 2.58 3.67 2.58 6.85-.86 5.36-2.58 6.75z" />
+                    </svg>
+                    <div
+                        class="bg-midnight py-2 px-4 rounded-md group-hover:flex hidden absolute -top-2.5 -translate-y-full -left-1">
+                        <span class="text-white whitespace-nowrap">I show on the top</span>
+                        <div class="bg-inherit rotate-45 p-1 absolute bottom-0.5 translate-y-1/2 left-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+            <div class="group relative">
+                <div class="h-4 w-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="fill-ui-gray">
+                        <path data-name="info"
+                            d="M64 0a64 64 0 1064 64A64 64 0 0064 0zm10 104H54V54h20zm-1.36-64.32q-2.59 2.09-8.64 2.09t-8.64-2.08c-1.72-1.39-2.58-3.64-2.58-6.75s.86-5.46 2.58-6.85S60 24 64 24s6.91.69 8.64 2.08 2.58 3.67 2.58 6.85-.86 5.36-2.58 6.75z" />
+                    </svg>
+                    <div
+                        class="bg-midnight py-2 px-4 rounded-md group-hover:flex hidden absolute -top-2.5 -translate-y-full -left-1">
+                        <span class="text-white whitespace-nowrap">I show on the top</span>
+                        <div class="bg-inherit rotate-45 p-1 absolute bottom-0.5 translate-y-1/2 left-3"></div>
+                    </div>
+                </div>
+            </div>
+            </script>
+        </div>
+    </div>
+</div>

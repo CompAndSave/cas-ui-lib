@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="title" content="{{title}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" media="all" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/Magento_Cms/cms-page.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+    <link rel="preload" as="font" crossorigin="anonymous" href="fonts/TI-Icons/TI-Icons.ttf" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Oleo+Script&family=Roboto+Slab:wght@300;800&display=swap" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body data-container="body" class="cms-page-view">
+    <div class="page-wrapper">
+        <header class="page-header">
+            <div class="top-header text-center show-for-large"> <a href="#free-shipping" class="dark-link sec-font fs-banner"> <small> Free shipping on orders of $50 or more! Reg: $3.99 </small> </a> </div>
+            <div class="main-header">
+                <div class="row align-middle hide-for-large">
+                    <div class="column shrink">
+                        <div class="row align-middle">
+                            <div class="column shrink hide-for-large"> <button type="button" data-toggle="mobileNav" id="mobileNavBtn" title="Main Menu"> <span class="cas-i-menu mobile-menu nav-inactive" aria-hidden="true"></span> <span class="cas-i-cross mobile-menu nav-active" aria-hidden="true"></span> </button> </div>
+                            <div class="column logo-wrapper">
+                                <div class="logo"> <a class="logo border-none" href="/"> <img src="images/logo.svg" alt="TomatoInk Home" width="180" /> </a> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column text-right">
+                        <div class="row align-right align-middle">
+                            <div class="column flex-child-shrink medium-flex-child-auto text-center show-for-small-only">
+                                <div class="header-search"> <button type="button" data-toggle="mobileSearch" class="mobile-menu-icon" title="Search"> <span class="cas-i-search icon" aria-hidden="true"></span> </button>
+                                    <div class="off-canvas-search off-canvas position-top is-closed" id="mobileSearch" data-off-canvas data-transition="detached">
+                                        <form class="form pill-form" id="mobileglobalSearchForm" action="#nsearch/" method="get"> <label for="mobile-global-search-input" class="show-for-sr">Search product</label> <input type="text" name="q" value="" placeholder="Find your cartridge or printer model..." class="input-text" maxlength="128" role="combobox" id="mobile-global-search-input" aria-expanded="false" aria-label="search box" aria-haspopup="false" aria-autocomplete="both" autocomplete="off" />
+                                            <div class="search-autocomplete"></div> <button type="submit" title="Search" class="button icon"> <span class="cas-i-search search-icon-w" aria-hidden="true"></span> </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column flex-child-shrink medium-flex-child-auto text-center show-for-medium-only">
+                                <div class="header-search">
+                                    <form class="form pill-form" id="tabletglobalSearchForm" action="#nsearch/" method="get"> <label for="tablet-global-search-input" class="show-for-sr">Search product</label> <input type="text" name="q" value="" placeholder="Find your cartridge or printer model..." class="input-text" maxlength="128" role="combobox" id="tablet-global-search-input" aria-expanded="false" aria-label="search box" aria-haspopup="false" aria-autocomplete="both" autocomplete="off" />
+                                        <div class="search-autocomplete"></div> <button type="submit" title="Search" class="button icon"> <span class="cas-i-search search-icon-w" aria-hidden="true"></span> </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="column shrink text-center"> <a href="#coupon" class="border-none mobile-menu-icon"> <span class="show-for-sr">Coupon Page</span> <span class="cas-i-coupon icon" role="presentation"></span> </a> </div>
+                            <div class="column shrink text-center"> <a class="border-none mobile-menu-icon" href="#checkout/cart" data-bind="scope: 'minicart_content'"> <span class="show-for-sr">Shopping Cart</span> <span class="cas-i-cart" role="presentation"></span> </a> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-top align-middle show-for-large">
+                    <div class="column shrink logo-wrapper">
+                        <div class="row align-middle">
+                            <div class="column shrink hide-for-large"> <button type="button" data-toggle="mobileNav" id="desktopNavBtn" title="Main Menu"> <span class="cas-i-menu mobile-menu nav-inactive" aria-hidden="true"></span> <span class="cas-i-cross mobile-menu nav-active" aria-hidden="true"></span> </button> </div>
+                            <div class="column logo-wrapper">
+                                <div class="logo"> <a class="logo border-none" href="/"> <img src="images/logo.svg" alt="TomatoInk Home" width="180" /> </a> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="row align-right align-middle">
+                            <div class="column">
+                                <div class="header-search">
+                                    <form class="form pill-form" id="desktopglobalSearchForm" action="#nsearch/" method="get"> <label for="desktop-global-search-input" class="show-for-sr">Search product</label> <input type="text" name="q" value="" placeholder="Find your cartridge or printer model..." class="input-text" maxlength="128" role="combobox" id="desktop-global-search-input" aria-expanded="false" aria-label="search box" aria-haspopup="false" aria-autocomplete="both" autocomplete="off" />
+                                        <div class="search-autocomplete"></div> <button type="submit" title="Search" class="button icon"> <span class="cas-i-search search-icon-w" aria-hidden="true"></span> </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="column shrink">
+                                <nav class="top-account-menu" aria-label="Header Top Menu">
+                                    <ul class="no-bullet dropdown menu" aria-label="Header Top Menu" data-dropdown-menu>
+                                        <li class="has-dropdown-submenu is-dropdown-submenu-parent"> <a href="#" class="border-none"> <span class="greet welcome"><strong>My Account</strong></span> </a>
+                                            <ul class="no-bullet account-menu hide" aria-label="Account Menu">
+                                                <li role="none">
+                                                    <ol class="no-bullet account-menu-list">
+                                                        <li class="account-login"> <a class="button primary login-btn" href="#customer" role="menuitem"> Sign In </a> </li>
+                                                        <li>
+                                                            <div class="account-register"> <span>New Customer?</span> <a class="dark-link" href="#customer" role="menuitem"> Starts Here </a> </div>
+                                                        </li>
+                                                        <li class="account-menu-box"> <a href="#customer/account" class="account-links "> <span class="cas-i-account ui-gray-icons account-menu-icon" aria-hidden="true"></span> <span>Account</span> </a> </li>
+                                                        <li class="account-menu-box"> <a href="#sales/order/history" class="account-links middle"> <span class="cas-i-order-history ui-gray-icons account-menu-icon" aria-hidden="true"></span> <span>Order History</span> </a> </li>
+                                                        <li class="account-menu-box"> <a href="#reorder/index" class="account-links "> <span class="cas-i-quick-reorder ui-gray-icons account-menu-icon" aria-hidden="true"></span> <span>Quick Reorder</span> </a> </li>
+                                                        <li class="account-menu-box"> <a href="#customer/address" class="account-links "> <span class="cas-i-address-book ui-gray-icons account-menu-icon" aria-hidden="true"></span> <span>Address Book</span> </a> </li>
+                                                    </ol>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-dropdown-submenu is-dropdown-submenu-parent"> <a href="#" class="border-none"> <span>Need Help?</span> </a>
+                                            <ul class="no-bullet help-menu hide" aria-label="Help Menu">
+                                                <li role="none">
+                                                    <div class="help-toll"> <span>Contact our customer support</span> <span class="help-toll-no"><a href="tel:+1-833-777-0127"> 1-833-777-0127</a></span> </div>
+                                                    <div class="help-other">
+                                                        <div class="help-other-box"> <a href="javascript:void(0)" class="ticket-trigger"><span class="cas-i-chat" aria-hidden="true"></span> <span class="ch-status">Live Chat</span></a> </div>
+                                                        <div class="help-other-box"> <a href="#contact"><span class="cas-i-email" aria-hidden="true"></span> Contact Us</a> </div>
+                                                    </div>
+                                                    <div class="help-links"> <a href="#order-tracking">Track Order</a> </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="hide-for-large"> <a class="border-none mobile-menu-icon" href="#checkout/cart" data-bind="scope: 'minicart_content'"> <span class="show-for-sr">Shopping Cart</span> <span class="cas-i-cart" role="presentation"></span> </a> </li>
+                                        <li class="has-dropdown-submenu is-dropdown-submenu-parent mini-cart show-for-large" data-bind="scope: 'minicart_content'" data-block="minicart"> <a href="#"> <span class="cas-i-cart mobile-menu-icon" aria-hidden="true"></span> <!-- ko if: getCartParam('summary_count') --> <span class="minicart-content-count">
+                                                    <!-- ko text: getCartParam('summary_count') -->
+                                                    <!-- /ko --></span> <span class="show-for-sr">
+                                                    <!-- ko text: getCartParam('summary_count')+' item in your cart' -->
+                                                    <!-- /ko --></span> <!-- /ko --> <span id="cartLabel" class="text show-for-large"><strong>Cart</strong></span> </a>
+                                            <ul class="no-bullet minicart hide" aria-label="Cart Content">
+                                                <li data-block="minicart"> <a href="#" class="show-for-sr">Your shopping cart content</a>
+                                                    <div class="minicart-content-wrapper" data-bind="scope: 'minicart_content'">
+                                                        <!-- ko template: getTemplate() -->
+                                                        <!-- /ko -->
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="hide-for-large sections nav-sections" aria-label="Mobile Main Menu">
+            <div class="off-canvas position-left mobile-nav" id="mobileNav" data-off-canvas data-transition="overlap">
+                <ul class="vertical menu drilldown" data-drilldown>
+                    <li><a href="#hp-printer-cartridges">HP</a></li>
+                    <li><a href="#epson-printer-cartridges">Epson</a></li>
+                    <li><a href="#brother-printer-cartridges">Brother</a></li>
+                    <li><a href="#canon-printer-cartridges">Canon</a></li>
+                    <li><a href="#lexmark-printer-cartridges">Lexmark</a></li>
+                    <li> <a href="#">Other Brands</a>
+                        <ul class="menu vertical nested">
+                            <li><a href="#samsung-printer-cartridges">Samsung</a></li>
+                            <li><a href="#dell-printer-cartridges">Dell</a></li>
+                            <li><a href="#kodak-printer-cartridges">Kodak</a></li>
+                            <li><a href="#konica-minolta-printer-cartridges">Konica-Minolta</a></li>
+                            <li><a href="#okidata-printer-cartridges">Okidata</a></li>
+                            <li><a href="#xerox-printer-cartridges">Xerox</a></li>
+                            <li><a href="#kyocera-mita-printer-cartridges">Kyocera-Mita</a></li>
+                            <li><a href="#pitney-bowes-printer-cartridges">Pitney Bowes</a></li>
+                            <li><a href="#panasonic-printer-laser-toner-cartridge">Panasonic</a></li>
+                            <li><a href="#ibm-printer-cartridges">IBM</a></li>
+                            <li><a href="#ricoh-printer-cartridges">Ricoh</a></li>
+                            <li><a href="#apple-printer-cartridges">Apple</a></li>
+                            <li><a href="#sharp-printer-cartridges">Sharp</a></li>
+                            <li><a href="#compaq-printer-cartridges">Compaq</a></li>
+                            <li><a href="#apollo-printer-cartridges">Apollo</a></li>
+                            <li><a href="#secap-series-printer-cartridges">Secap</a></li>
+                            <li><a href="#bryce-series-printer-cartridges">Bryce</a></li>
+                            <li><a href="#rena-series-printer-cartridges">Rena</a></li>
+                            <li><a href="#astrojet-series-printer-cartridges">AstroJet</a></li>
+                            <li><a href="#neopost-series-printer-cartridges">Neopost</a></li>
+                            <li><a href="#hasler-series-printer-cartridges">Hasler</a></li>
+                            <li><a href="#mimaki-series-printer-cartridges">Mimaki</a></li>
+                            <li><a href="#roland-series-printer-cartridges">Roland</a></li>
+                            <li><a href="#mutoh-series-printer-cartridges">Mutoh</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="#">Accessories</a>
+                        <ul class="menu vertical nested">
+                            <li><a href="#paper">Photo Paper & More</a></li>
+                            <li><a href="#refill-kit">Refill Kit / Bulk Ink</a></li>
+                            <li><a href="#usb-printer-cables">Cables</a></li>
+                        </ul>
+                    </li>
+                    <li class="account-menu-link"><a href="#customer/account/login">Login to Account</a></li>
+                    <li><a href="#order-tracking">Track Order</a></li>
+                </ul>
+                <ul class="help-section-wrapper">
+                    <li class="has-dropdown-submenu is-dropdown-submenu-parent"> <a href="#" class="border-none"> <span>Need Help?</span> </a>
+                        <ul class="no-bullet help-menu hide" aria-label="Help Menu">
+                            <li role="none">
+                                <div class="help-toll"> <span>Contact our customer support</span> <span class="help-toll-no"><a href="tel:+1-833-777-0127"> 1-833-777-0127</a></span> </div>
+                                <div class="help-other">
+                                    <div class="help-other-box"> <a href="javascript:void(0)" class="ticket-trigger"><span class="cas-i-chat" aria-hidden="true"></span> <span class="ch-status">Live Chat</span></a> </div>
+                                    <div class="help-other-box"> <a href="#contact"><span class="cas-i-email" aria-hidden="true"></span> Contact Us</a> </div>
+                                </div>
+                                <div class="help-links"> </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="sections show-for-large nav-sections" aria-label="Main Menu">
+            <ul class="no-bullet dropdown menu" aria-label="Main Menu" role="menu" data-dropdown-menu>
+                <li><a href="#hp-printer-cartridges">HP</a></li>
+                <li><a href="#epson-printer-cartridges">Epson</a></li>
+                <li><a href="#brother-printer-cartridges">Brother</a></li>
+                <li><a href="#canon-printer-cartridges">Canon</a></li>
+                <li><a href="#lexmark-printer-cartridges">Lexmark</a></li>
+                <li class="has-dropdown-submenu is-dropdown-submenu-parent"> <a href="#" data-toggle="otherBrandNav">Other Brands</a>
+                    <!--Get all remaining ink categories-->
+                    <ul class="no-bullet account-menu main-nav-menu menu other-brand hide" aria-label="Other Printer Brand Menu">
+                        <li><a href="#samsung-printer-cartridges">Samsung</a></li>
+                        <li><a href="#dell-printer-cartridges">Dell</a></li>
+                        <li><a href="#kodak-printer-cartridges">Kodak</a></li>
+                        <li><a href="#konica-minolta-printer-cartridges">Konica-Minolta</a></li>
+                        <li><a href="#okidata-printer-cartridges">Okidata</a></li>
+                        <li><a href="#xerox-printer-cartridges">Xerox</a></li>
+                        <li><a href="#kyocera-mita-printer-cartridges">Kyocera-Mita</a></li>
+                        <li><a href="#pitney-bowes-printer-cartridges">Pitney Bowes</a></li>
+                        <li><a href="#panasonic-printer-laser-toner-cartridge">Panasonic</a></li>
+                        <li><a href="#ibm-printer-cartridges">IBM</a></li>
+                        <li><a href="#ricoh-printer-cartridges">Ricoh</a></li>
+                        <li><a href="#apple-printer-cartridges">Apple</a></li>
+                        <li><a href="#sharp-printer-cartridges">Sharp</a></li>
+                        <li><a href="#compaq-printer-cartridges">Compaq</a></li>
+                        <li><a href="#apollo-printer-cartridges">Apollo</a></li>
+                        <li><a href="#secap-series-printer-cartridges">Secap</a></li>
+                        <li><a href="#bryce-series-printer-cartridges">Bryce</a></li>
+                        <li><a href="#rena-series-printer-cartridges">Rena</a></li>
+                        <li><a href="#astrojet-series-printer-cartridges">AstroJet</a></li>
+                        <li><a href="#neopost-series-printer-cartridges">Neopost</a></li>
+                        <li><a href="#hasler-series-printer-cartridges">Hasler</a></li>
+                        <li><a href="#mimaki-series-printer-cartridges">Mimaki</a></li>
+                        <li><a href="#roland-series-printer-cartridges">Roland</a></li>
+                        <li><a href="#mutoh-series-printer-cartridges">Mutoh</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown-submenu is-dropdown-submenu-parent"> <a href="#" data-toggle="accessoriesNav">Accessories</a>
+                    <!--Get all remaining ink categories-->
+                    <ul class="no-bullet account-menu main-nav-menu menu accs-nav hide" aria-label="Accessories Menu">
+                        <li><a href="#paper">Photo Paper & More</a></li>
+                        <li><a href="#refill-kit">Refill Kit / Bulk Ink</a></li>
+                        <li><a href="#usb-printer-cables">Cables</a></li>
+                    </ul>
+                </li>
+                <li class="coupon-nav"><a href="#coupon" title="Coupon Page"> <span class="cas-i-coupon menu-caret valign-middle" role="presentation"></span> <span class="valign-middle">Coupon</span></a></li>
+            </ul>
+        </nav>
+        <div class="row column">
+            <nav aria-label="You are here:">
+                <ul class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li class="home home" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <a itemprop="item" href="#" title="Go to Home Page"> <span itemprop="name">Home</span> </a>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="current cms_page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> <span class="show-for-sr">Current: </span><span itemprop="name">{{title}}</span>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row column messages">
+            <div data-placeholder="messages"></div>
+            <div data-bind="scope: 'messages'">
+                <!-- ko if: cookieMessages && cookieMessages.length > 0 -->
+                <div style="display:none" role="alert" data-bind="foreach: { data: cookieMessages, as: 'message' }, visible: cookieMessages">
+                    <div data-bind="attr: { class: 'callout messages ' + message.type, 'data-ui-id': 'message-' + message.type }">
+                        <div data-bind="html: message.text"></div>
+                    </div>
+                </div> <!-- /ko -->
+                <!-- ko if: messages().messages && messages().messages.length > 0 -->
+                <div style="display:none" role="alert" data-bind="foreach: { data: messages().messages, as: 'message' }, visible: messages().messages">
+                    <div data-bind="attr: { class: 'callout closeable message-' + message.type + ' ' + message.type + ' message', 'data-ui-id': 'message-' + message.type }" data-closable> <button class="close-button" aria-label="Close message box" type="button" data-close> <span aria-hidden="true">&times;</span> </button>
+                        <div data-bind="html: message.text"></div>
+                    </div>
+                </div> <!-- /ko -->
+            </div>
+        </div>
+        <main id="maincontent" class="page-main"><a id="contentarea" tabindex="-1"></a>
+            <div class="row column">
+                <div class="page-title-wrapper ">
+                    <h1 class="page-title h2 lh-1_2"> {{title}} </h1>
+                </div>
+            </div> <!-- CONTENT STARTS HERE -->
+            <div class="main-content">
+                {{{content}}}
+            </div>
+        </main> <!-- CONTENT ENDS HERE -->
+        <footer class="page-footer">
+            <div class="footer content">
+                <div class="row large-unstack">
+                    <div class="column"> <span class="newsletter-heading">Subscribe and save 15% off today!</span>
+                        <div class="block newsletter">
+                            <form class="form subscribe" novalidate action="#newsletter/subscriber/new" method="post"> <label for="footer-sub-input" class="show-for-sr">Email</label> <input name="email" type="email" id="footer-sub-input" placeholder="Enter&#x20;your&#x20;email&#x20;address&#x20;here" required data-validate="{required:true, 'validate-email':true}"> <input type="hidden" name="page_source" value="footer"> <button class="button " title="Start&#x20;Saving" type="submit"> <span>Start&#x20;Saving</span> </button> </form>
+                        </div>
+                        <p class="policy">Plus, you'll receive exclusive email offers or news weekly. Don't worry. Your email address is never shared or sold. See our <a href="#privacy-policy" title="Our Privacy Policy" class="sub-policy">Privacy Policy</a> for details.</p>
+                    </div>
+                    <div class="column footer-co-info"> <span class="footer-title">Follow us on:</span>
+                        <div class="social-media">
+                            <div class="row small-10 medium-6 large-12">
+                                <div class="column"><a href="//www.facebook.com/tomatoinktoner" class="border-none" target="_blank"> <span class="show-for-sr">facebook link opens in a new window</span> <span class="cas-i-facebook social-media-icons" aria-hidden="true"></span> </a></div>
+                                <div class="column"><a href="//twitter.com/tomatoinktoner" class="border-none" target="_blank"> <span class="show-for-sr">twitter link opens in a new window</span> <span class="cas-i-twitter social-media-icons" aria-hidden="true"></span> </a></div>
+                                <div class="column"><a href="//www.tomatoink.com/blog" class="border-none" target="_blank"> <span class="show-for-sr">wordpress link opens in a new window</span> <span class="cas-i-wordpress social-media-icons" aria-hidden="true"></span> </a></div>
+                                <div class="column"><a href="//pinterest.com/tomatoinktoner/" class="border-none" target="_blank"> <span class="show-for-sr">pinterest link opens in a new window</span> <span class="cas-i-pinterest social-media-icons" aria-hidden="true"></span> </a></div>
+                                <div class="column"><a href="//www.youtube.com/c/Tomatoink" class="border-none" target="_blank"> <span class="show-for-sr">youtube link opens in a new window</span> <span class="cas-i-youtube social-media-icons" aria-hidden="true"></span> </a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="row accordion accordion-mobile" data-accordion="" data-multi-expand="true" data-allow-all-closed="true">
+                        <div class="column small-12 large-3 accordion-item" data-accordion-item=""><a class="accordion-title" href="#">Company</a>
+                            <div class="accordion-content" data-tab-content="">
+                                <ul class="no-bullet">
+                                    <li><a href="#about">About Us</a></li>
+                                    <li><a href="#mission-statement">Mission Statement</a></li>
+                                    <li><a href="#corporate-account-application">Corporate Account</a></li>
+                                    <li><a href="#become-an-affiliate">Become An Affiliate</a></li>
+                                    <li><a href="#contact">Contact Us</a></li>
+                                    <li><a href="#reseller-wholesalers">Reseller Program</a></li>
+                                    <li><a href="#welcome/subscribe"> Get 15% Off</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column small-12 large-3 accordion-item" data-accordion-item=""><a class="accordion-title" href="#">Policies</a>
+                            <div class="accordion-content" data-tab-content="">
+                                <ul class="no-bullet">
+                                    <li><a href="#privacy-policy">Privacy Policy</a></li>
+                                    <li><a href="#terms-and-conditions">Terms &amp; Conditions</a></li>
+                                    <li><a href="#shipping-policy">Shipping Policy</a></li>
+                                    <li><a href="#return-policy">Return Policy</a></li>
+                                    <li><a href="#do-not-sell-or-share-my-personal-information">Do Not Sell My Personal Information</a></li>
+                                    <li><a href="#privacy-center/account/check">Privacy Center</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column small-12 large-3 accordion-item" data-accordion-item=""><a class="accordion-title" href="#">Resources</a>
+                            <div class="accordion-content" data-tab-content="">
+                                <ul class="no-bullet">
+                                    <li><a href="/help/articles/8322170118797/low-price-guarantee">Low Price Guarantee</a></li>
+                                    <li><a href="/help/articles/8322901869709/remanufactured-and-compatible-printer-cartridges">Ink Knowledge Base</a></li>
+                                    <li><a href="/help/categories/8354812380557/troubleshoot">Ink Troubleshooting</a></li>
+                                    <li><a href="#epson-firmware-downgrade">Epson Firmware Reset</a></li>
+                                    <li><a href="#hp-printer-firmware-downgrade">HP Printer Firmware Downgrade</a></li>
+                                    <li><a href="#printer-and-driver-support">Printer Support</a></li>
+                                    <li><a href="#ink-toner-recycling-guide">Ink Recycling Guide</a></li>
+                                    <li><a href="#environmentally-friendly-green-ink-and-toner-cartridges">Eco-Friendly Inks</a></li>
+                                    <li><a href="#help">Help Center</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column small-12 large-3 accordion-item" data-accordion-item=""><a class="accordion-title" href="#">Account</a>
+                            <div class="accordion-content" data-tab-content="">
+                                <ul class="no-bullet">
+                                    <li><a href="#customer/account">My Account</a></li>
+                                    <li><a href="/help/categories/8294976996109/account">Help with My Account</a></li>
+                                    <li><a href="#order-tracking">Order Status</a></li>
+                                    <li><a href="#checkout/cart">View Cart</a></li>
+                                    <li><a href="#rma/index">Need to Return Item?</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer policy">
+                <div class="row copyright medium-unstack">
+                    <div class="column copyright">
+                        <p class="tiny-txt">Copyright © 2023 TomatoInk. All Rights Reserved.</p>
+                    </div>
+                    <div class="column">
+                        <p class="medium-text-right tiny-txt">Apple, Brother, Dell, HP, IBM, Lexmark, Canon, Epson, Xerox and other manufacturer brand names and logos are registered trademarks of their respective owners. Any and all brand name designations or references are made solely for purposes of demonstrating compatibility.</p>
+                    </div>
+                </div>
+            </div> <!-- BEGIN GCR Badge Code -->
+            <!-- END GCR Badge Code -->
+        </footer>
+        <div class="screen-overlay" id="screenOverlay"></div>
+    </div>
+    <div class="reveal" id="createAccountModal" data-reveal aria-modal="true"> <button class="close-button" data-close aria-label="Close create account pop up" type="button"> <span class="cas-i-cross close-button-icon" aria-hidden="true"></span> </button>
+        <div class="row modal-form">
+            <div class="column">
+                <h2 class="form-title">Create an Account</h2>
+                <p class="form-subtitle"> You're only a few seconds away from personalized shopping, speedy orders, and huge savings. </p>
+                <div class="res-message callout"></div>
+                <div class="create-acc-form">
+                    <form action="#customer/ajax/create" id="createAccountForm" method="post" enctype="multipart/form-data" autocomplete="off" data-bind="scope: 'email-verify-createAccountForm'" data-abide novalidate> <input name="form_key" type="hidden" value="PpUffHkLgjmIEA3K" />
+                        <div class="reveal" id="createAccountForm-modal" data-reveal aria-modal="false" data-bind="afterRender:initModel">
+                            <!-- ko template: getTemplate() -->
+                            <!-- /ko -->
+                        </div>
+                        <div class="row medium-unstack">
+                            <div class="column"> <label for="createAccountFirstName">First Name <span class="input-required">*</span> <input type="text" id="createAccountFirstName" name="firstname" placeholder="First Name" pattern="alpha" autocomplete="given-name" value="" required> <small class="form-error-msg" data-form-error-for="createAccountFirstName"> Please input your First name</small> </label> </div>
+                            <div class="column"> <label for="createAccountLastName">Last Name <span class="input-required">*</span> <input type="text" id="createAccountLastName" name="lastname" placeholder="Last Name" pattern="alpha" autocomplete="family-name" value="" required> <small class="form-error-msg" data-form-error-for="createAccountLastName"> Please input your Last name</small> </label> </div>
+                        </div> <label for="createAccountEmail">Email <span class="input-required">*</span> <input type="text" id="createAccountEmail" name="email" placeholder="example@mail.com" pattern="email" autocomplete="email" value="" required> <small class="form-error-msg" data-form-error-for="createAccountEmail">Please input your valid email. E.g. example@mail.com</small> </label>
+                        <div class="row">
+                            <div class="column small-12"> <label for="createAccountPass">Password <span class="input-required">*</span> <small class="help-text" id="passRequirement">Minimum of 6 characters, with at least one uppercase, one lowercase, one number, and one special character or symbol(e.g., ! @ # ?).</small> </label> </div>
+                            <div class="column small-12 medium-6">
+                                <div class="input-group inline-label show-pass"> <input type="password" name="password" id="createAccountPass" placeholder="create password" pattern="new_password" aria-describedby="passRequirement" autocomplete="off" required>
+                                    <!--<span class="input-group-label"> <a class="show-pass-anchor" title="Show Password">SHOW</a> </span>-->
+                                </div> <small class="form-error" data-form-error-for="createAccountPass" data-form-error-on="required">Password is required</small> <small class="form-error pass-err" data-form-error-for="createAccountPass" data-form-error-on="pattern">Please input your valid password</small>
+                            </div>
+                            <div class="column small-12 medium-6"> <label for="retypeAccountPass"> <span class="show-for-sr">Re-type Password</span> <span class="input-group inline-label show-pass"> <input type="password" name="password_confirmation" id="retypeAccountPass" placeholder="re-type password" aria-describedby="passRequirement" autocomplete="off" required data-equalto="createAccountPass">
+                                        <!--<span class="input-group-label"> <a class="show-pass-anchor" href="#" title="Show Password">SHOW</a> </span>--> </span> <small class="form-error-msg" data-form-error-for="retypeAccountPass" data-form-error-on="equalTo"> Password has to match.</small> </label> </div>
+                        </div>
+                        <div class="input-group checkbox-wrapper sub-me"> <input type="checkbox" name="subscribeMe" value="1" id="subscribeMe"> <label for="subscribeMe">Sign me up to receive exclusive email offers.</label> </div> <small class="sub-disclaimer">Don't worry. Your email address is never shared or sold. See our <a href="#privacy-policy">Privacy Policy</a> for details. </small>
+                        <button type="submit" class="button expanded form-button" data-bind="click: formSubmitted"> Create My Account</button>
+                    </form>
+                    <p class="form-extra-info"> <small>By creating an account, you agree to our <a href="#terms-and-conditions">Terms and Conditions</a>. </small> </p>
+                    <div class="other-account-link">
+                        <p class="form-extra-info">Already have an account? <button data-close data-open="loginModal" class="link">Log in now</button> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reveal" id="loginModal" data-reveal aria-modal="true"> <button class="close-button" data-close aria-label="Close login pop up" type="button"> <span class="cas-i-cross close-button-icon" aria-hidden="true"></span> </button>
+        <div class="row modal-form">
+            <div class="column">
+                <h2 class="form-title">Welcome Back!</h2> <span class="form-subtitle">Log in with your credentials below.</span>
+                <div class="res-message callout"></div>
+                <div class="login-form margin-top-1">
+                    <form action="#customer/ajax/login" method="post" id="loginForm" data-abide="ajax" novalidate> <input name="form_key" type="hidden" value="PpUffHkLgjmIEA3K" />
+                        <div> <input type="hidden" name="redirect_url" />
+                            <div class="input-group inline-label"> <label for="loginEmail" class="show-for-sr">Enter Your Email</label> <span class="input-group-label"> <span class="cas-i-email light-gray-icons" aria-hidden="true"></span> </span> <input type="text" id="loginEmail" class="input-group-field" placeholder="example@mail.com" required aria-label="Email address" pattern="email" value="" autocomplete="email" name="username"> </div> <small class="form-error-msg" data-form-error-for="loginEmail">Please input your valid email. E.g. example@mail.com</small>
+                        </div>
+                        <div>
+                            <div class="input-group inline-label"> <label for="loginPass" class="show-for-sr">Password</label> <span class="input-group-label"> <span class="cas-i-lock light-gray-icons" aria-hidden="true"></span> </span> <input type="password" id="loginPass" class="input-group-field" aria-label="Password" placeholder="password" name="password" autocomplete="off" required> </div> <small class="form-error-msg" data-form-error-for="loginPass">Please input your valid password</small>
+                        </div>
+                        <button type="submit" class="button expanded form-button">Log In to Compandsave</button>
+                    </form>
+                    <div class="other-account-link">
+                        <p class="form-extra-info">Forgot your password? <button data-close data-open="forgotPassModal" class="link">Forgot Your Password?</button></p>
+                        <p class="form-extra-info">New to our site? <button data-close data-open="createAccountModal" class="link">Create an Account</button> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reveal" id="forgotPassModal" data-reveal aria-modal="true"> <button class="close-button" data-close aria-label="Close reset password pop up" type="button"> <span class="cas-i-cross close-button-icon" aria-hidden="true"></span> </button>
+        <div class="row modal-form">
+            <div class="column">
+                <h2 class="form-title">Forgot Your Password?</h2>
+                <p class="form-subtitle"> Enter your email address below, and we'll send you the link to reset your password. </p>
+                <div class="res-message callout"></div>
+                <div class="login-form margin-top-1">
+                    <form action="#customer/ajax/forgotpasswordpost" method="post" id="forgotPassForm" data-abide="ajax" novalidate>
+                        <div>
+                            <div class="input-group inline-label"> <label for="forgotPassEmail" class="show-for-sr">Email Address</label> <span class="input-group-label"> <span class="cas-i-email light-gray-icons" aria-hidden="true"></span> </span> <input type="text" id="forgotPassEmail" class="input-group-field" placeholder="example@mail.com" aria-label="Email address" required pattern="email" name="email"> </div> <small class="form-error-msg" data-form-error-for="forgotPassEmail">Please input your valid email. E.g. example@mail.com</small>
+                        </div>
+                        <button type="submit" class="button expanded form-button">Reset Password</button>
+                    </form>
+                    <div class="other-account-link">
+                        <p class="form-extra-info">Know your password? <button data-close data-open="loginModal" class="link">Back to Login</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/scrollTo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <script>
+        $(document).foundation();
+
+    </script>
+</body>
+
+</html>

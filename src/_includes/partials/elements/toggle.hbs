@@ -1,0 +1,30 @@
+<div class="rounded-md border w-7/12 mt-2" x-data=" {selected: 'preview' }">
+    <div class="bg-black flex gap-6 px-4 py-2 justify-end rounded-t-md">
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'preview'">Result</button>
+        <button class="px-3 py-1 text-ui-lt-gray font-semibold hover:bg-dk-gray rounded-full"
+            @click="selected = 'code'">Code</button>
+    </div>
+    <div class="flex flex-col p-4 rounded-b-md" :class="selected == 'preview'? 'bg-white':'bg-midnight'">
+        <div class="bg-white self-center" x-show="selected == 'preview'">
+            <div class="relative inline-flex items-center">
+                <input id="toggleSwitch" type="checkbox" value="" class="sr-only peer">
+                <label for="toggleSwitch"
+                    class="cursor-pointer group peer ring-0 bg-lt-gray rounded-full outline-none duration-300 after:duration-300 w-16 h-8  shadow-inner peer-checked:bg-secondary after:content-['\2715'] after:text-sm after:rounded-full after:absolute after:bg-white after:shadow-md peer-focus:after:border-2 peer-focus:after:border-dk-gray after:h-6 after:w-6 after:top-1 after:left-1 after:flex after:justify-center after:items-center peer-checked:after:translate-x-8  peer-checked:after:text-lg peer-checked:after:content-['\2713']">
+                    <span class="sr-only">Expand All</span>
+                </label>
+            </div>
+        </div>
+        <div class="bg-midnight" x-show="selected == 'code'" x-cloak>
+            <script type="text/plain" class="language-markup">
+            <div class="relative inline-flex items-center cursor-pointer">
+                <input id="toggleSwitch" type="checkbox" value="" class="sr-only peer">
+                <label for="toggleSwitch"
+                    class="cursor-pointer group peer ring-0 bg-lt-gray rounded-full outline-none duration-300 after:duration-300 w-16 h-8  shadow-inner peer-checked:bg-secondary after:content-['\2715'] after:text-sm after:rounded-full after:absolute after:bg-white after:shadow-md peer-focus:after:border-2 peer-focus:after:border-dk-gray after:h-6 after:w-6 after:top-1 after:left-1 after:flex after:justify-center after:items-center peer-checked:after:translate-x-8  peer-checked:after:text-lg peer-checked:after:content-['\2713']">
+                    <span class="sr-only">Expand All</span>
+                </label>
+            </div>
+            </script>
+        </div>
+    </div>
+</div>

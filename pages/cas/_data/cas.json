@@ -1,0 +1,15 @@
+{
+    "name": "CompandSave.com",
+    "buttonColors": [
+        "secondary",
+        "magenta",
+        "dk-yellow",
+        "lt-yellow",
+        "green"
+    ],
+    "neutButtonColors": [
+        "ui-lt-gray",
+        "ui-gray",
+        "md-gray"
+    ]
+}

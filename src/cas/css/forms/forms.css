@@ -1,0 +1,18 @@
+@layer components {
+  .checkbox {
+    @apply relative cursor-pointer select-none pl-10 before:absolute before:left-2 before:top-1/2 before:z-50 before:-mt-2 before:h-3 before:w-4 before:scale-0 before:transition-transform before:duration-300 before:ease-in-out before:content-[url('../images/icons/checkmark-cyan.svg')] after:absolute after:-top-0.5 after:left-1 after:z-10 after:h-6 after:w-6 after:rounded-md after:border after:border-gray-300 after:bg-white after:shadow-inner after:content-[''] peer-checked:before:scale-100 peer-hover:after:border-secondary peer-focus:after:border peer-focus:after:border-secondary peer-focus:after:shadow-glow peer-focus:after:outline-none;
+  }
+  .radio {
+    @apply relative cursor-pointer select-none pl-10 before:absolute before:left-2 before:top-0.5 before:z-50 before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-secondary before:transition-transform before:duration-300 before:ease-in-out before:content-[''] after:absolute after:-top-0.5 after:left-1 after:z-10 after:h-6 after:w-6 after:rounded-full after:border after:border-gray-300  after:bg-white after:shadow-inner after:content-[''] peer-checked:before:scale-100 peer-hover:after:border-secondary peer-focus:after:border peer-focus:after:border-secondary peer-focus:after:shadow-glow;
+  }
+  .select {
+    @apply appearance-none rounded-md border border-gray-200 bg-white bg-right bg-no-repeat bg-origin-content px-4 py-2 shadow-inner focus:border-secondary focus:shadow-glow focus:outline-none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="8" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: rgb%28114, 121, 141%29"></polygon></svg>');
+  }
+  .file-active {
+    @apply border-secondary bg-ice;
+  }
+  .file-inactive {
+    @apply border-ui-lt-gray bg-white;
+  }
+}
